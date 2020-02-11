@@ -15,7 +15,7 @@ The latter will be published gradually over the coming days.
 
 | Description  | File |
 | -- | -- |
-| OPTIMAL COMMITTMENT POLICY  | Examples/run_OCP  |
+| OPTIMAL COMMITMENT POLICY  | Examples/run_OCP  |
 | SIMPLE POLICY RULE WITH STATE VARIABLE | Examples/ex1.m   |
 | EXCLUDE REGIME 0 BUT SPECIFY EXOGENOUS T-TILDE | Examples/ex2.m |
 | EXCLUDE BOTH REGIME 0 AND EXOGENOUS T-TILDE | Examples/ex3.m |
