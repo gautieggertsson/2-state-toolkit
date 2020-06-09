@@ -10,7 +10,7 @@
 IR = zeros(param.NY,size(ResM,1));
 
 %% PROBABILITY WEIGHTS
-P = param.gamma*(1-param.gamma).^[0:1:config.taumax-2]';
+P = (1-param.mu)*param.mu.^[0:1:config.taumax-2]';
 P(end) = param.mu^(config.taumax-2);
 
 %% COMPUTE WEIGHTED AVERAGE
