@@ -20,7 +20,7 @@ The latter will be published gradually over the coming days.
 | EXCLUDE REGIME 0 AND IMPOSE EXOGENOUS K | Examples/ex_4.m |
 | EXCLUDE INITIAL VALUES | Examples/ex_5.m |
 
-The Examples folder contains files that a researcher from which a researcher can learn how to use the toolbox its features.
+The Examples folder contains files from which a researcher can learn how to use the toolbox its features.
 
 The model is
 E_t(x_{t+1}) + sigma E_t(pi_{t+1}) + r^n_t = x_t + sigma i_t
