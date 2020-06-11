@@ -5,7 +5,7 @@ Gauti B. Eggertsson,^ Sergey K. Egiev, Alessandro Lin, Josef Platzer and Luca Ri
 
 ^ gauti_eggertsson@brown.edu  
 
-This repository contains the code base for the toolkit presented in Eggertsson et al. (2020), as well as simple examples to show how the toolkit works as well as replication codes for the paper.
+This repository contains the code base for the toolkit presented in Eggertsson et al. (2020), simple examples to show how the toolkit works as well as replication codes for the paper.
 
 The latter will be published gradually over the coming days.  
 
@@ -14,7 +14,6 @@ The latter will be published gradually over the coming days.
 
 | Description  | File |
 | -- | -- |
-| OPTIMAL COMMITMENT POLICY  | Examples/OCP/run_OCP  |
 | SIMPLE POLICY RULE WITH STATE VARIABLE | Examples/ex_1.m   |
 | EXCLUDE REGIME 0 BUT SPECIFY EXOGENOUS T-TILDE | Examples/ex_2.m |
 | EXCLUDE BOTH REGIME 0 AND EXOGENOUS T-TILDE | Examples/ex_3.m |
