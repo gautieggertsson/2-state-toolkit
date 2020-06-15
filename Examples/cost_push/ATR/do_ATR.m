@@ -1,5 +1,5 @@
 %% AUGMENTED TAYLOR RULE (ATR) FROM REIFSCHNEIDER AND WILLIAMS (2000)
-%  Some more text
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;

@@ -1,12 +1,16 @@
-%%  TRUNCATED TAYLOR RULE (TTRS). 
-%   Extensive example with all features of the toolbox
+%% EXAMPLE 5- Exclude initial values
+% The example is based on a simple 3-equation New-Keynesian Model featuring
+% a Truncated Taylor rule with backward looking component.
+% See readme.md for additional details.
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
+
 clear;
 clc;
 close all;
-tic;
 
 addpath('../Source')
 addpath('Common')
+
 
 %%  0) CONFIGURATION
 
@@ -15,7 +19,7 @@ config.taumax       = 400; % declare the maximum contingency
 config.max_length_2 = 50;  % declare the maximum length of regime 2
 config.bound        = 0;   % declare the bound for the variable subject to it
 config.mono         = 1;   % switch for monotone k-vector
-config.trh          = -exp(-14);     % declare a numerical threshold for which the constraint is thought as binding. i.e. if i < bound +trh, then lower bound counts as being violated
+config.trh          = -exp(-14); % declare a numerical threshold for which the constraint is thought as binding. i.e. if i < bound +trh, then lower bound counts as being violated
 
 %   0.2) SPECIFY MODEL AND CALIBRATION
 variables  % vector of variables [Z_t P_(t-1)]'
@@ -30,6 +34,7 @@ param = rmfield(param,"init_cond");
 [D_2,G_2]                           = regime2(AAA,BBB,D_3a,param,config); 
 [D_1,G_1, ResM, max_k,k,T_tilde]    = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'verbose',1);
 
+% Rescale into annualized values
 ResM(:,vars.x,:)    = ResM(:,vars.x,:)*100;
 ResM(:,vars.pi,:)   = ResM(:,vars.pi,:)*400;
 ResM(:,vars.i,:)    = ResM(:,vars.i,:)*400;

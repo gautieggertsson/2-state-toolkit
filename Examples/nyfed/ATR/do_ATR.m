@@ -1,5 +1,6 @@
-%% FRBNY DSGE Model (Del Negro et al, 2013)
-%  Some more text
+%% AUGMENTED TAYLOR RULE (ATR) FROM REIFSCHNEIDER AND WILLIAMS (2000)
+% FRBNY DSGE Model (Del Negro et al, 2013)
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;
@@ -12,10 +13,10 @@ parameters % model parameters
 matrices   % model matrices (A, B)
 
 %% SPECIFY SOLVER CONFIGURATION
-config.taumax       = 200;               % declare the maximum contingency
-config.max_length_2 = 21;                % declare the maximum length of regime 2
+config.taumax       = 200;   % declare the maximum contingency
+config.max_length_2 = 21; % declare the maximum length of regime 2
 config.bound        = -log(param.Rstarn); % declare the bound for the variable subject to it
-config.mono         = 0;                 % switch for monotone k-vector
+config.mono         = 0; % switch for monotone k-vector
 
 %% SOLVE
 tic
@@ -26,7 +27,7 @@ toc
 
 % %% COMPUTE ADDITIONAL VARIABLES
 % CheckR
-vars.checkR = size(ResM,2)+1;        %to check if ZLB also implied by model
+vars.checkR = size(ResM,2)+1; %to check if ZLB also implied by model
 ResM(:,vars.checkR,:) = 0;
 for tau=1:config.taumax
     ResM(:,vars.checkR,tau) = ResM(:,vars.R_tr,tau) - param.alpha_ATR*...

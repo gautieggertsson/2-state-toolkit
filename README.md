@@ -20,48 +20,37 @@ The latter will be published gradually over the coming days.
 | EXCLUDE REGIME 0 AND IMPOSE EXOGENOUS K | Examples/ex_4.m |
 | EXCLUDE INITIAL VALUES | Examples/ex_5.m |
 
-The Examples folder contains files from which a researcher can learn how to use the toolbox its features.
+The Examples folder contains files from which the user can learn how to use the toolkit and its features.
 
-The model is
-E_t(x_{t+1}) + sigma E_t(pi_{t+1}) + r^n_t = x_t + sigma i_t
-beta E_t(pi_{t+1}) = pi_t - kappa x_t
-i_t = max(0,psi_i i_{t-1} + (1-psi_i)(r_star + psi_pi pi_{t-1} + psi_x x_{t-1}))
+*T-tilde:*
+- T-tilde is 1 by default.
+- The user can input an arbitrary value, if the "true" value is lower than the input AND regime 0 search is off, then there will likely be NEGATIVE RATES, before T-tilde. This last result will also be true if the "true" value is lower than the input AND regime 0 search is on. If the "true" value is higher than the input AND regime 0 search is off, then there will be POSITIVE implied rates, for periods where the model does impose them (regime 1).
 
-The jump variables are x_t pi_t i_t
-The state variables are x_{t-1} pi_{t-1} i_{t-1}
-The constants are r_star
-The shocks are r^n_t
-Note we add another jump variable i_imp_t (the implied Taylor rule, for exposition. See end of matrices_m1.m)
-
-The vector xi_t = [x_t pi_t i_imp_t i_t x_{t-1} pi_{t-1} i_{t-1} r_star r^n_t]'
-
-Notice how i_t needs to be the last jump variable.
-
-Run ex_x.m for each of the following cases
-x = 1 - baseline example
-x = 2 - with exogenous T_TILDE and no regime 0 search
-x = 3 - without T_TILDE and no regime 0 search
-x = 4 - with exogenous k-vector and no regime 0 search
-x = 5 - without initial values
-
-All examples above are made for the user to understand the working of the optional inputs.
-
-T_tilde:
-- T_tilde is 1 by default.
-- the user can input an arbitrary value, if the "true" value is lower than the input AND regime 0 search is off, then there will likely be NEGATIVE RATES, before T_tilde. This last result will also be true if the "true" value is lower than the input AND regime 0 search is on. If the "true" value is higher than the input AND regime 0 search is off, then there will be POSITIVE implied rates, for periods where the model does impose them (regime 1).
-
-Regime 0 search:
-- Regime 0 search is = 1 by default.
+*Regime 0 search:*
+- Regime 0 search is 1 by default.
 - Regime 0 search = 0 means that Regime 0 will not be searched for. Likely implying that the ELB is imposed too early.
 
-K-vector:
+*K-vector:*
 - k-vector is [0 0 0 ..]  by default.
 - the user can input a k-vector. However, if there is violation of the ELB in regime 3, then the toolbox will update the k-vector.
 - to impose an exogenous k-vector, it is advised that the used sets off Regime 0 search. This also implies that in the initial periods, the implied rate may be positive, but the ELB would be imposed.
 
-initial values:
+*Initial values:*
 - initial values are [0 0 0 ..]  by default.
 - the user should input values if there are state variables. (see file parameters.m)
+
+The model is:
+E_t(x_{t+1}) + sigma E_t(pi_{t+1}) + r^n_t = x_t + sigma i_t
+beta E_t(pi_{t+1}) = pi_t - kappa x_t
+i_t = max(0,psi_i i_{t-1} + (1-psi_i)(r_star + psi_pi pi_{t-1} + psi_x x_{t-1}))
+
+- The jump variables are x_t, pi_t and i_t
+- The pre-determined variables are x_{t-1}, pi_{t-1} and i_{t-1}
+- The constants are r_star
+- The shocks are r^n_t
+- The vector xi_t = [x_t pi_t i_imp_t i_t x_{t-1} pi_{t-1} i_{t-1} r_star r^n_t]'
+
+Note we add another jump variable i_imp_t (the implied Taylor rule, for exposition. See end of Common/matrices.m). Also, note how i_t needs to be the last jump variable.
 
 ## REPLICATION
 
@@ -75,7 +64,7 @@ initial values:
 | FIGURE  7  | Replication/fig7_8_tab3/do_fig7_8_tab3.m | 
 | FIGURE  8  | Replication/fig7_8_tab3/do_fig7_8_tab3.m
 | FIGURE  9  | Replication/fig9/do_fig9.m |  
-| FIGURE 10  | Replication/do_fig10.m |
+| FIGURE 10  | Replication/fig10/do_fig10.m |
 |||
 TABLE   2  | Replication/do_fig5_tab2.m |
 TABLE   3  | Replication/fig7_8_tab3/do_fig7_8_tab3.m |
@@ -112,6 +101,3 @@ TABLE A.3  ||
 TABLE A.4  ||
 TABLE A.5  ||
 TABLE A.6  ||
-
-
-

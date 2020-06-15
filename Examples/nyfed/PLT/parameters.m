@@ -9,7 +9,7 @@ helper_bet                = -param.target_natreal + 400*param.gam_nyfed;
 param.beta                = exp(helper_bet/400); 
 param.s2                  = 3.121;
 param.gamma_e             = 0.99;
-param.gammstar            = param.gamma_e; %no idea what else gammstar should be!!!!! they also use 0.99 for gammstar
+param.gammstar            = param.gamma_e; 
 param.delta               = 0.025;
 param.zeta_sp_b           = 0.070;
 param.nu_l                = 1.273;
@@ -21,7 +21,7 @@ param.psi_y               = 0.273 ;
 param.pistar              = exp(2.0/400);
 param.sigma_r             = 0.152;
 param.lambda_f            = 0.15;
-param.sprd                = (1+1.163/100)^(1/4); %exp(para(21)/400);    %% st st spread from annual perc to quarterly number ; like they do it
+param.sprd                = (1+1.163/100)^(1/4); %exp(para(21)/400); %% st st spread from annual perc to quarterly number ; like they do it
 param.Lstar               = 1; %taken from their matlab file. they fix it at 1
 param.Bigphi              = 0; %taken from them. they fix it at 0
 param.chi                 = 0.1;
@@ -48,7 +48,7 @@ param.spsl                = 0.0; %2  %2.25 for output in draft; try to hit doubl
 param.ul                  = 0.001556;
 
 % Add fake shocks for the code to compute the number of shocks
-param.rl = [param.rl;param.spsl;log(param.pistar);param.ul];                %[-0.097;3] double i to c;[-0.100;2.2] equal c and i resp
+param.rl = [param.rl;param.spsl;log(param.pistar);param.ul]; %[-0.097;3] double i to c;[-0.100;2.2] equal c and i resp
 param.rh = [0.0000000;0.0000000;log(param.pistar);0];
 
 % Additional transformations

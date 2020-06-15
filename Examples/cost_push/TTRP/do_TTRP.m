@@ -1,5 +1,5 @@
 %% TRUNCATED TAYLOR RULE REACTING TO PRICE LEVEL (TTRP)
-%  Some more text
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;

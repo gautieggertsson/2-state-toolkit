@@ -5,6 +5,7 @@
 % FL-FG tries to replicate commitment. The initial shock is calibrated
 % in both processes so that it produces a 7.5% drop in output on impact
 % if the central bank followed a Taylor rule (discretion)
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;
@@ -12,11 +13,12 @@ clear;
 addpath('../../Source')
 addpath('../Common')
 
+
 %% 1.0) 2-STATE MARKOV - CONFIGURE
 config.taumax       = 400;  % declare the maximum contingency
 config.max_length_2 = 50;  % declare the maximum length of regime 2
-config.bound        = 0;    % declare the bound for the variable subject to it
-config.mono         = 1;    % switch for monotone k-vector
+config.bound        = 0; % declare the bound for the variable subject to it
+config.mono         = 1; % switch for monotone k-vector
 
 %% 1.1) 2-STATE MARKOV - DISCRETION
 target_output = -0.075;
@@ -27,13 +29,13 @@ variables_equations_matrices_TS_DISC
 [D_2,G_2]               = regime2(AAA,BBB,D_3a,param,config);
 [~,~,ResM,~,R.TS.dis.k] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'R0_search',0);
 
-ResM_pi = 4*squeeze(ResM(:,vars.pi,:));       % calculate welfare loss
+ResM_pi = 4*squeeze(ResM(:,vars.pi,:));   % calculate welfare loss
 ResM_x  = squeeze(ResM(:,vars.x,:));
 lambda = [param.lagr_pi;param.lagr_x]; 
 target = zeros(2,1);
     
 R.TS.dis.wloss = wloss(ResM_pi,ResM_x,lambda,target,param.beta,param.mu);
-R.TS.dis.ResM = ResM;                       % store resm
+R.TS.dis.ResM = ResM;   % store resm
 impulseresponse                             % store IRF
 R.TS.dis.IRF = [IR(:,vars.x) IR(:,vars.pi) IR(:,vars.i)];
 
@@ -72,17 +74,19 @@ k(2:param.fg_target) = sort(1:(param.fg_target-1),'descend');
 [~,~,ResM,~,R.TS.flfg.k] = ...
     regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'k_input',k);
 
-ResM_pi = 4*squeeze(ResM(:,vars.pi,:));       % calculate welfare loss
+ResM_pi = 4*squeeze(ResM(:,vars.pi,:));   % calculate welfare loss
 ResM_x  = squeeze(ResM(:,vars.x,:));
 lambda = [param.lagr_pi;param.lagr_x]; 
 target = zeros(2,1);
     
 R.TS.flfg.wloss = wloss(ResM_pi,ResM_x,lambda,target,param.beta,param.mu);
-R.TS.flfg.ResM = ResM;                       % store resm
+R.TS.flfg.ResM = ResM;   % store resm
 impulseresponse                             % store IRF
 R.TS.flfg.IRF = [IR(:,vars.x) IR(:,vars.pi) IR(:,vars.i)];
  
 clearvars -except R config param
+
+
 %% 1.3) 2-STATE MARKOV - COMM 
 variables_equations_matrices_TS_COMM 
 
@@ -90,13 +94,13 @@ variables_equations_matrices_TS_COMM
 [D_2,G_2]               = regime2(AAA,BBB,D_3a,param,config);
 [~,~,ResM,~,R.TS.com.k] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'R0_search',0);
 
-ResM_pi = 4*squeeze(ResM(:,vars.pi,:));       % calculate welfare loss
+ResM_pi = 4*squeeze(ResM(:,vars.pi,:));   % calculate welfare loss
 ResM_x  = squeeze(ResM(:,vars.x,:));
 lambda = [param.lagr_pi;param.lagr_x]; 
 target = zeros(2,1);
     
 R.TS.com.wloss = wloss(ResM_pi,ResM_x,lambda,target,param.beta,param.mu);
-R.TS.com.ResM = ResM;                       % store resm
+R.TS.com.ResM = ResM;   % store resm
 impulseresponse                             % store IRF
 R.TS.com.IRF = [IR(:,vars.x) IR(:,vars.pi) IR(:,vars.i)]; 
 
@@ -106,7 +110,6 @@ clearvars -except R config
 config.taumax       = 5; % declare the maximum contingency
 config.max_length_2 = 150;  % declare the maximum length of regime 2
 config.mono         = 0;   % switch for monotone k-vector
-
 
 %% 2.1) AR(1) - FIND SHOCK SIZE FOR OUTPUT DROP UNDER DISCRETION
 target_output = -0.075;
@@ -127,21 +130,21 @@ while err> 0.00000001
     [~,~,ResM,~,R.AR.dis.k] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'R0_search',0);
 
     ResM_x  = squeeze(ResM(:,vars.x,:));
-    err = abs(ResM_x(1,2)-target_output) 
-    it = it+1
+    err = abs(ResM_x(1,2)-target_output)
+    it = it+1;
 end 
 
 [D_3,G_3,D_3a]          = regime3(AAA,BBB,param);
 [D_2,G_2]               = regime2(AAA,BBB,D_3a,param,config);
 [~,~,ResM,~,R.AR.dis.k] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'R0_search',0);
 
-ResM_pi = 4*squeeze(ResM(:,vars.pi,:));       % calculate welfare loss
+ResM_pi = 4*squeeze(ResM(:,vars.pi,:));   % calculate welfare loss
 ResM_x  = squeeze(ResM(:,vars.x,:));
 lambda = [param.lagr_pi;param.lagr_x]; 
 target = zeros(2,1);
     
 R.AR.dis.wloss = wloss(ResM_pi,ResM_x,lambda,target,param.beta,param.mu);
-R.AR.dis.ResM = ResM;                       % store resm
+R.AR.dis.ResM = ResM;   % store resm
 impulseresponse                             % store IRF
 R.AR.dis.IRF = [IR(:,vars.x) IR(:,vars.pi) IR(:,vars.i)];
 
@@ -180,13 +183,13 @@ k = k(1:config.taumax);
 [~,~,ResM,~,R.AR.flfg.k] = ...
     regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'k_input',k,'R0_search',0);
 
-ResM_pi = 4*squeeze(ResM(:,vars.pi,:));       % calculate welfare loss
+ResM_pi = 4*squeeze(ResM(:,vars.pi,:));   % calculate welfare loss
 ResM_x  = squeeze(ResM(:,vars.x,:));
 lambda = [param.lagr_pi;param.lagr_x]; 
 target = zeros(2,1);
     
 R.AR.flfg.wloss = wloss(ResM_pi,ResM_x,lambda,target,param.beta,param.mu);
-R.AR.flfg.ResM = ResM;                       % store resm
+R.AR.flfg.ResM = ResM;   % store resm
 impulseresponse                             % store IRF
 R.AR.flfg.IRF = [IR(:,vars.x) IR(:,vars.pi) IR(:,vars.i)];
  
@@ -194,6 +197,7 @@ clearvars -except R config param
 
 
 clearvars -except R config param
+
 %% 2.3) AR(1) - COMM 
 variables_equations_matrices_AR_COMM 
 param.init_cond = [0;0;1/param.beta-1;0;0;-(1-param.rho)/param.rho*(1/param.beta-1);0;1/param.beta-1];
@@ -202,24 +206,24 @@ param.init_cond = [0;0;1/param.beta-1;0;0;-(1-param.rho)/param.rho*(1/param.beta
 [D_2,G_2]               = regime2(AAA,BBB,D_3a,param,config);
 [~,~,ResM,~,R.AR.com.k] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'R0_search',0);
 
-ResM_pi = 4*squeeze(ResM(:,vars.pi,:));       % calculate welfare loss
+ResM_pi = 4*squeeze(ResM(:,vars.pi,:));   % calculate welfare loss
 ResM_x  = squeeze(ResM(:,vars.x,:));
 lambda = [param.lagr_pi;param.lagr_x]; 
 target = zeros(2,1);
     
 R.AR.com.wloss = wloss(ResM_pi,ResM_x,lambda,target,param.beta,param.mu);
-R.AR.com.ResM = ResM;                       % store resm
+R.AR.com.ResM = ResM;   % store resm
 impulseresponse                             % store IRF
 R.AR.com.IRF = [IR(:,vars.x) IR(:,vars.pi) IR(:,vars.i)]; 
 
 clearvars -except R config 
+
 
 %% 3.0) OUT - COMPUTE RELATIVE WELFARE LOSSES
 R.TS.rel_loss.flfg = R.TS.flfg.wloss/R.TS.com.wloss;
 R.TS.rel_loss.dis = R.TS.dis.wloss/R.TS.com.wloss;
 R.AR.rel_loss.flfg = R.AR.flfg.wloss/R.AR.com.wloss;
 R.AR.rel_loss.dis = R.AR.dis.wloss/R.AR.com.wloss;
-
 
 %% 3.1) OUT - FIGURES - PLOT IMPULSE RESPONSES
 
@@ -249,8 +253,6 @@ plot(time_com,100*R.TS.com.IRF(time_com+1,1),'color',colours(1))
 plot(time_com,100*R.TS.flfg.IRF(time_com+1,1),'color',colours(12))
 ylabel('$$\hat{Y}$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
-%title('Natural Output')
-% ylim([-8 1])
 subplot(3,2,2); hold on;
 
 plot(time_AR,100*R.AR.dis.IRF(time_AR+1,1),'color',colours(2),'LineStyle','--')
@@ -258,27 +260,21 @@ plot(time_AR,100*R.AR.com.IRF(time_AR+1,1),'color',colours(1))
 plot(time_AR,100*R.AR.flfg.IRF(time_AR+1,1),'color',colours(12))
 ylabel('$$\hat{Y}$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
-%title('Natural Output')
-% ylim([-8 1])
 
 % Inflation
 subplot(3,2,3); hold on;
 plot(time_com,400*R.TS.dis.IRF(time_com+1,2),'color',colours(2),'LineStyle','--')
 plot(time_com,400*R.TS.com.IRF(time_com+1,2),'color',colours(1))
 plot(time_com,400*R.TS.flfg.IRF(time_com+1,2),'color',colours(12))
-% ylim([-3 0.5])
 ylabel('$$\pi$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
-%title('Inflation')
 subplot(3,2,4); hold on;
 
 plot(time_AR,400*R.AR.dis.IRF(time_AR+1,2),'color',colours(2),'LineStyle','--')
 plot(time_AR,400*R.AR.com.IRF(time_AR+1,2),'color',colours(1))
 plot(time_AR,400*R.AR.flfg.IRF(time_AR+1,2),'color',colours(12))
-% ylim([-3 0.5])
 ylabel('$$\pi$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
-%title('Inflation')
 
 % Interest rate
 subplot(3,2,5); hold on;
@@ -287,8 +283,6 @@ plot(time_com,400*R.TS.com.IRF(time_com+1,3),'color',colours(1))
 plot(time_com,400*R.TS.flfg.IRF(time_com+1,3),'color',colours(12))
 ylabel('$$i$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
-% ylim([-1 2])
-%title('Interest Rate')
 legend('Discretion','Commitment','FLFG','Orientation','horizontal')
 legend boxoff
 
@@ -298,9 +292,6 @@ plot(time_AR,400*R.AR.com.IRF(time_AR+1,3),'color',colours(1))
 plot(time_AR,400*R.AR.flfg.IRF(time_AR+1,3),'color',colours(12))
 ylabel('$$i$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
-% ylim([-1 2])
-%title('Interest Rate')
 legend('Discretion','Commitment','FLFG','Orientation','horizontal')
 legend boxoff
-
 clearvars -except R config

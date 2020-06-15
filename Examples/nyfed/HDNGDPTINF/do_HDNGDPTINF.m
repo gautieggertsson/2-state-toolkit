@@ -1,5 +1,6 @@
-%% FRBNY DSGE Model (Del Negro et al, 2013)
-%  Some more text
+%% HISTORY-DEPENDENT NOMINAL GDP TARGET IMPLEMENTED AS TAYLOR RULE
+% FRBNY DSGE Model (Del Negro et al, 2013)
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;
@@ -12,10 +13,10 @@ parameters % model parameters
 matrices   % model matrices (A, B)
 
 %% SPECIFY SOLVER CONFIGURATION
-config.taumax       = 200;               % declare the maximum contingency
-config.max_length_2 = 21;                % declare the maximum length of regime 2
+config.taumax       = 200;   % declare the maximum contingency
+config.max_length_2 = 21; % declare the maximum length of regime 2
 config.bound        = -log(param.Rstarn); % declare the bound for the variable subject to it
-config.mono         = 0;                 % switch for monotone k-vector (Josef says how is should be)
+config.mono         = 0; % switch for monotone k-vector (Josef says how is should be)
 
 %% SOLVE
 tic
@@ -27,7 +28,7 @@ toc
 %% COMPUTE ADDITIONAL VARIABLES
 % CheckR
 
-%vars.checkR = size(ResM,2)+1;        %to check if ZLB also implied by model
+%vars.checkR = size(ResM,2)+1; %to check if ZLB also implied by model
 %ResM(:,vars.checkR,:) = 0;
 vars.ngdp = size(ResM,2)+1;
 ResM(:,vars.ngdp,:) = 0;

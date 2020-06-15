@@ -1,5 +1,6 @@
 %% COMPARE CONTINGENCIES AND IMPULSE RESPONSES ACROSS INTEREST RATE POLICIES
 % Parametrization is taken from parameters.m files in Examples
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clear;
 close all;
@@ -13,21 +14,20 @@ cfg.path = 'Examples/nyfed';
 
 
 %% SET PARAMETERS
-%               1      2      3     4       5       6          7      8       9       10        11       12            13
 cfg.models = {'TTR0','TTRP','ATR','SUP','NGDPT','CumNGDPT','TTRSm1','TTRm1','TTRp1','AIT20','NYFEDrule','HDNGDPTINF','PLT'};
 cfg.V       = {'y','pi','R','hat_P','hat_N','yhd','yhdpi'}; % variables to plot
-cfg.n_mod   = length(cfg.models);     % number of models
-cfg.n_var   = length(cfg.V);          % number of vars to plot
-cfg.taumax  = 200;                    % max no. of contingencies
-cfg.l2      = 21;                     % max length of regime 2
-cfg.cont    = 32;                     % contingency to select
-cfg.horizon = 55;                     % time horizon for IRF plots
+cfg.n_mod   = length(cfg.models); % number of models
+cfg.n_var   = length(cfg.V);  % number of vars to plot
+cfg.taumax  = 200; % max no. of contingencies
+cfg.l2      = 21; % max length of regime 2
+cfg.cont    = 32; % contingency to select
+cfg.horizon = 55; % time horizon for IRF plots
 
 set(0,'DefaultFigureVisible','off');  % suppress figures
 
 
 %% INIT CONTAINERS 
-R.wl    = zeros(cfg.n_mod,1);            
+R.wl    = zeros(cfg.n_mod,1);
 R.e_zlb = zeros(cfg.n_mod,1);
 R.c     = zeros(floor((cfg.taumax+cfg.l2)*1.1),cfg.n_var,cfg.n_mod);
 R.v     = zeros(cfg.n_mod,3);
@@ -48,7 +48,7 @@ for m = 1:length(cfg.models)
         run(strcat(cfg.root,cfg.path,'/',string(cfg.models(m)),'/do_',string(cfg.models(m)),'.m'));
     end
     
-    [R.wl(m), R.e_zlb(m), R.c(:,:,m), R.v(m,:), R.i(m,:), R.irf(:,:,m)] = out(ResM,IR,k,T_tilde,vars,param,cfg.V,cfg.cont,'nyfed');    fprintf(strcat(string(cfg.models(m)),' done\n'))
+    [R.wl(m), R.e_zlb(m), R.c(:,:,m), R.v(m,:), R.i(m,:), R.irf(:,:,m)] = out(ResM,IR,k,T_tilde,vars,param,cfg.V,cfg.cont,'nyfed');fprintf(strcat(string(cfg.models(m)),' done\n'))
     clearvars -except R cfg m
 end
 
@@ -129,7 +129,7 @@ PanelB = R.c(:,[4:7],mod_extra);
 graph_models(PanelA,cfg.horizon,var_labA,cfg.mod_lab(mod_extra),col_extra,line_extra,'nyfed',1,'startstring','07-03','add_data',1);
 
 % Other rules table, last 4 vars (Panel B)
-graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_extra),col_extra,line_extra,'nyfed',1,'startstring','07-03','add_data',1);    
+graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_extra),col_extra,line_extra,'nyfed',1,'startstring','07-03','add_data',1);
 clear PanelA PanelB
 
 % Group ODP
@@ -151,6 +151,5 @@ PanelB = R.irf(:,[4:7],mod_extra);
 graph_models(PanelA,cfg.horizon,var_labA,cfg.mod_lab(mod_extra),col_extra,line_extra,'nyfed',1,'startstring','07-03','add_data',0); 
 % 
 % % Other rules table, last 4 vars (Panel B)
-graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_extra),col_extra,line_extra,'nyfed',1,'startstring','07-03','add_data',0);     
-
+graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_extra),col_extra,line_extra,'nyfed',1,'startstring','07-03','add_data',0); 
 clearvars -except R cfg T

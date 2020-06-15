@@ -1,15 +1,15 @@
 %% TRUNCATED TAYLOR RULE (TTR). CONTEMPORANEOUS INFLATION AND OUTPUT GAP
-%  Some more text
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;
 addpath('../../../Source')
 
 %% SPECIFY MODEL AND CALIBRATION
-variables   % vector of variables [Z_t P_(t-1)]'
-equations   % name equations
-parameters  % model parameters
-matrices_0  % model matrices (A, B)
+variables  % vector of variables [Z_t P_(t-1)]'
+equations  % name equations
+parameters % model parameters
+matrices   % model matrices (A, B)
 
 %% SPECIFY SOLVER CONFIGURATION
 config.taumax       = 400; % declare the maximum contingency

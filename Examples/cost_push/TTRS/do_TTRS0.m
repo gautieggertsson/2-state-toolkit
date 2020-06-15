@@ -1,5 +1,5 @@
 %% TRUNCATED TAYLOR RULE (TTRS). SMOOTHED CONTEMPORANEOUS INFLATION AND OUTPUT GAP
-%  Some more text
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;
@@ -16,7 +16,7 @@ config.taumax       = 400; % declare the maximum contingency
 config.max_length_2 = 50;  % declare the maximum length of regime 2
 config.bound        = 0;   % declare the bound for the variable subject to it
 config.mono         = 1;   % switch for monotone k-vector
-config.trh          = -exp(-14);     % declare a numerical threshold for which the constraint is thought as binding. i.e. if i < bound +trh, then lower bound counts as being violated
+config.trh          = -exp(-14); % declare a numerical threshold for which the constraint is thought as binding. i.e. if i < bound +trh, then lower bound counts as being violated
 
 
 %% SOLVE

@@ -1,18 +1,18 @@
 % Variables
-vars.x       = 1;   % comment
-vars.pi      = 2;   % comment
-vars.i       = 3;   % comment   
-vars.r       = 4;   % comment   
-vars.u       = 5;   % comment   
-vars.rb      = 6;   % comment 
+vars.x       = 1;
+vars.pi      = 2;
+vars.i       = 3;   
+vars.r       = 4;   
+vars.u       = 5;   
+vars.rb      = 6; 
 
 % Equations
-eq.is     = 1;  % comment
-eq.pc     = 2;  % comment 
-eq.r      = 3;  % comment
-eq.u      = 4;  % comment
-eq.rb     = 5;  % comment
-eq.i      = 6;  % comment
+eq.is     = 1;
+eq.pc     = 2; 
+eq.r      = 3;
+eq.u      = 4;
+eq.rb     = 5;
+eq.i      = 6;
 
 % Matrices
 param.NY = 6;

@@ -1,17 +1,17 @@
 % Variables
-vars.x       = 1;   % comment
-vars.pi      = 2;   % comment 
-vars.i       = 3;   % comment      
-vars.phi1    = 4;   % comment
-vars.phi2    = 5;   % comment
-vars.r       = 6;   % comment 
+vars.x       = 1;
+vars.pi      = 2; 
+vars.i       = 3;  
+vars.phi1    = 4;
+vars.phi2    = 5;
+vars.r       = 6; 
  
 
 % Equations
-eq.is     = 1;  % comment
-eq.pc     = 2;  % comment
-eq.foc_x  = 3;  % comment
-eq.foc_pi = 4;  % comment  
+eq.is     = 1;
+eq.pc     = 2;
+eq.foc_x  = 3;
+eq.foc_pi = 4;  
 eq.r      = 5;   
 eq.i      = 6;  % interest rate
  

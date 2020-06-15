@@ -4,9 +4,9 @@ function graph_models(data_cube,T,var_labels,model_labels,col,lstyles,varargin)
 p = inputParser;
 
 addParameter(p,'nyfed',0,@(x) isnumeric(x));
-addParameter(p,'startstring','07-03');          %note: startstring has to be 'yy-qq'
+addParameter(p,'startstring','07-03');  %note: startstring has to be 'yy-qq'
 addParameter(p,'add_data',0,@(x) isnumeric(x));
-addParameter(p,'data_select',[1:7]);            %choose which data to plot from array observations
+addParameter(p,'data_select',[1:7]); %choose which data to plot from array observations
 
 parse(p,varargin{:});
 nyfed       = p.Results.nyfed;
@@ -50,11 +50,11 @@ elseif nyfed == 1
     sub1 = str2double(sub1); %turn into numeric
     sub2 = str2double(sub2);
     
-    yrd  = floor(T/4);        %determine how many years to add
-    qrd  = T-yrd*4;           %determine how many quarters to add
+    yrd  = floor(T/4); %determine how many years to add
+    qrd  = T-yrd*4;   %determine how many quarters to add
     
-    sub1 = sub1 + yrd;       %add years
-    sub2 = sub2 + qrd;       %add quarters
+    sub1 = sub1 + yrd;   %add years
+    sub2 = sub2 + qrd;   %add quarters
     
     if sub2 > 4              %adjust years again if quarters larger 4
         yrd  = floor((sub2-1)/4);
@@ -94,7 +94,7 @@ elseif nyfed == 1
         observations(:,1) = GDP_deviations(startidx:end); %start from Q1 2008; Q3 2019
         observations(:,2) = inflation(startidx:end);
         observations(:,3) = interest(startidx:end);
-        observations(:,4) = price_level(startidx:end)-price_level(startidx);                
+        observations(:,4) = price_level(startidx:end)-price_level(startidx);
         observations(:,5) = ngdp_implied(startidx:end)-ngdp_implied(startidx);
         observations(:,6) = gamma_index(startidx:end)-gamma_index(startidx);
         observations(:,7) = D_index(startidx:end)-D_index(startidx);
@@ -116,7 +116,7 @@ elseif nyfed == 1
         if add_data == 1
             if n_var == 4
             current_line = plot(time(1:size(observations,1)),observations(:,data_select(v+3)),'r:');
-            current_line(1).LineWidth = 1.5;    
+            current_line(1).LineWidth = 1.5;
             else
             current_line = plot(time(1:size(observations,1)),observations(:,data_select(v)),'r:');
             current_line(1).LineWidth = 1.5;

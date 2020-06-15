@@ -1,5 +1,5 @@
 %% TRUNCATED TAYLOR RULE (TTRS). SMOOTHED FUTURE INFLATION AND OUTPUT GAP
-%  Some more text
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;

@@ -1,5 +1,6 @@
-%% COMPARE RULES IN THE 3 EQUATION NEW-KEYNESIAN MODEL
+%% FIGURE 2. COMPARE RULES IN THE 3-EQUATION NEW-KEYNESIAN MODEL
 % Parametrization is the standard Eggertsson and Woodford (2003). 
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clear;
 close all;
@@ -13,20 +14,20 @@ cfg.path = 'Examples/3eqnk';
 
 %% SET PARAMETERS         
 cfg.models  = {'OCP','TTR0','PLT','NGDPT'};
-cfg.V       = {'x','pi','i','ngdp'};     % variables to plot
-cfg.taumax  = 400;                       % max no. of contingencies
-cfg.l2      = 50;                        % max length of regime 2
-cfg.cont    = 10;                        % contingency to select
-cfg.horizon = 20;                        % time horizon for IRF plots
+cfg.V       = {'x','pi','i','ngdp'}; % variables to plot
+cfg.taumax  = 400; % max no. of contingencies
+cfg.l2      = 50;  % max length of regime 2
+cfg.cont    = 10;  % contingency to select
+cfg.horizon = 20;  % time horizon for IRF plots
 
-set(0,'DefaultFigureVisible','off');     % suppress figures
+set(0,'DefaultFigureVisible','off'); % suppress figures
 
 
 %% INIT CONTAINERS 
-cfg.n_mod   = length(cfg.models);     % number of models
-cfg.n_var   = length(cfg.V);          % number of vars to plot
+cfg.n_mod   = length(cfg.models); % number of models
+cfg.n_var   = length(cfg.V);      % number of vars to plot
 
-R.wl    = zeros(cfg.n_mod,1);            
+R.wl    = zeros(cfg.n_mod,1);
 R.e_zlb = zeros(cfg.n_mod,1);
 R.c     = zeros(floor((cfg.taumax+cfg.l2)*1.1),cfg.n_var,cfg.n_mod);
 R.v     = zeros(cfg.n_mod,3);

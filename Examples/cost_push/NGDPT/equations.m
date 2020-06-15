@@ -1,10 +1,10 @@
 % Equations
-eq.is    = 1;  % comment
-eq.pc    = 2;  % comment
-eq.pl    = 3;  % comment
+eq.is    = 1;
+eq.pc    = 2;
+eq.pl    = 3;
 
-eq.r     = 4;  % comment
-eq.rstar = 5;  % comment
+eq.r     = 4;
+eq.rstar = 5;
 eq.cps   = 6;  % cost push shock
 
-eq.rule  = 7;  % comment
+eq.rule  = 7;

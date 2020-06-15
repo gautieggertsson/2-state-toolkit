@@ -1,5 +1,5 @@
 %% OPTIMAL COMMITMENT POLICY (RAMSEY PLAN)
-%  Some more text
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;

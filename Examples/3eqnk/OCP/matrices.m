@@ -32,9 +32,9 @@ AAA(eq.r,vars.r)         = 1;
 BBB(eq.r,vars.r)         = 1;
 
 % Real rate
-AAA(eq.real,vars.pi)      = 1;
-BBB(eq.real,vars.real)    = -1;
-BBB(eq.real,vars.i)       = 1;
+AAA(eq.real,vars.pi)     = 1;
+BBB(eq.real,vars.real)   = -1;
+BBB(eq.real,vars.i)      = 1;
 
 % Nominal interest rate
 AAA(eq.i,vars.phi1)      = 1; 

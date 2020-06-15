@@ -1,6 +1,6 @@
 % Equations
-eq.is       = 1;  % comment
-eq.pc       = 2;  % comment
+eq.is       = 1;
+eq.pc       = 2;
 
 eq.pi_lag1  = 3;
 eq.pi_lag2  = 4;
@@ -23,7 +23,7 @@ eq.pi_lag18 = 20;
 eq.pi_lag19 = 21;
 
 eq.rstar    = 22;
-eq.r        = 23;  % comment
+eq.r        = 23;
 eq.cps      = 24;  % cost push shock
 
 eq.rule     = 25;  % interest rate

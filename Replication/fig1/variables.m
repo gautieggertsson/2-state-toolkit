@@ -1,7 +1,7 @@
 % Variables
-vars.x       = 1;   % comment
-vars.pi      = 2;   % comment
-vars.i       = 3;   % comment      
-vars.phi1    = 4;   % comment
-vars.phi2    = 5;   % comment
-vars.r       = 6;   % comment 
+vars.x       = 1;
+vars.pi      = 2;
+vars.i       = 3;  
+vars.phi1    = 4;
+vars.phi2    = 5;
+vars.r       = 6; 

@@ -1,13 +1,14 @@
 % Equations
-eq.is     = 1;  % comment
-eq.pc     = 2;  % comment
+eq.is     = 1;  % Dynamic IS curve
+eq.pc     = 2;  % New-Keynesian Phillips Curve
 
-eq.x_lag  = 3;  % comment
-eq.pi_lag = 4;  % comment
-eq.i_lag  = 5;  % comment
-eq.i_imp  = 6;  % comment
+eq.x_lag  = 3;  % Lagged output
+eq.pi_lag = 4;  % Lagged inflation
+eq.i_lag  = 5;  % Lagged nominal rate
 
-eq.rstar  = 7;  % comment
-eq.r      = 8;  % comment
+eq.i_imp  = 6;  % Implied Taylor rule 
 
-eq.rule   = 9;  % comment
+eq.rstar  = 7;  % Natural real interest rate
+eq.r      = 8;  % Real interest rate
+
+eq.rule   = 9;  % Monetary policy rule

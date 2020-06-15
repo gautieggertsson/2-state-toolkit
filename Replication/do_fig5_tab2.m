@@ -3,6 +3,7 @@
 % are set to generate a drop in output on impact of -7.5%, and a drop in
 % inflation of -0.5%, 0% or -2%, depending on the folder run.
 % Utility calculations are based on equal weighting on an annualised base.
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clear;
 close all;
@@ -15,22 +16,21 @@ cfg.path = 'Examples/cost_push';
 
 
 %% SET PARAMETERS
-%               1     2      3      4         5        6       7     8     9     10       11      12       
 cfg.models  = {'OCP','TTR0','PLT','NGDPT','CumNGDPT','SDTR','TTRP','ATR','SUP','TTRSm1','TTRm1','AIT'};
 cfg.V       = {'x','pi','i','p','rr','ngdp','yhd','yhdpi'}; % variables to plot
-cfg.taumax  = 400;                                          % max no. of contingencies
-cfg.l2      = 50;                                           % max length of regime 2
-cfg.cont    = 10;                                           % contingency to select
-cfg.horizon = 20;                                           % time horizon for IRF plots
+cfg.taumax  = 400;          % max no. of contingencies
+cfg.l2      = 50;           % max length of regime 2
+cfg.cont    = 10;           % contingency to select
+cfg.horizon = 20;           % time horizon for IRF plots
 
-set(0,'DefaultFigureVisible','off');                        % suppress figures
+set(0,'DefaultFigureVisible','off'); % suppress figures
 
 
 %% INIT CONTAINERS 
-cfg.n_mod   = length(cfg.models);     % number of models
-cfg.n_var   = length(cfg.V);          % number of vars to plot
+cfg.n_mod   = length(cfg.models); % number of models
+cfg.n_var   = length(cfg.V);  % number of vars to plot
 
-R.wl    = zeros(cfg.n_mod,1);            
+R.wl    = zeros(cfg.n_mod,1);
 R.e_zlb = zeros(cfg.n_mod,1);
 R.c     = zeros(floor((cfg.taumax+cfg.l2)*1.1),cfg.n_var,cfg.n_mod);
 R.v     = zeros(cfg.n_mod,3);
@@ -124,7 +124,7 @@ PanelB = R.c(:,[4 6:8],mod_base);
 graph_models(PanelA,cfg.horizon,var_labA,cfg.mod_lab(mod_base),col_base,line_base);
 
 % Baseline table, last 4 vars (Panel B)
-graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_base),col_base,line_base);    
+graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_base),col_base,line_base);
 
 
 %-- Group Other Rules (for appendix)
@@ -135,7 +135,7 @@ PanelB = R.c(:,[4 6:8],mod_extra);
 graph_models(PanelA,cfg.horizon,var_labA,cfg.mod_lab(mod_extra),col_extra,line_extra);
 
 % Other rules table, last 4 vars (Panel B)
-graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_extra),col_extra,line_extra);    
+graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_extra),col_extra,line_extra);
 clear PanelA PanelB
 
 
@@ -149,7 +149,7 @@ PanelB = R.irf(:,[4 6:8],mod_base);
 graph_models(PanelA,cfg.horizon,var_labA,cfg.mod_lab(mod_base),col_base,line_base);
 
 % Baseline table, last 4 vars (Panel B)
-graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_base),col_base,line_base);    
+graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_base),col_base,line_base);
 
 %-- Group Other Rules
 PanelA = R.irf(:,1:3,mod_extra);
@@ -159,6 +159,5 @@ PanelB = R.irf(:,[4 6:8],mod_extra);
 graph_models(PanelA,cfg.horizon,var_labA,cfg.mod_lab(mod_extra),col_extra,line_extra);
 
 % Other rules table, last 4 vars (Panel B)
-graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_extra),col_extra,line_extra);    
-
+graph_models(PanelB,cfg.horizon,var_labB,cfg.mod_lab(mod_extra),col_extra,line_extra);
 clearvars -except R cfg T

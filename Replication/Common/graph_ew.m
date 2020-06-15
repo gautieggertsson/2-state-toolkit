@@ -33,7 +33,7 @@ end
 if exist('IRF_labels','var') == 0 %if particular variables were not passed to function
     total_vars = size(IR,2); %then total number of variables = all variables
     IRF_vars = 1:total_vars; %locations are just columns of each variable
-    IRF_labels = fieldnames(var);%labels are just extracted from struct "var"
+    IRF_labels = fieldnames(var); %labels are just extracted from struct "var"
 else
     total_vars = size(IRF_labels,2); %particular variables were passed to function
     IRF_vars = ones(1,total_vars); %total number of variables is inferred

@@ -1,12 +1,12 @@
 % Variables
-vars.x     = 1;   % comment
-vars.pi    = 2;   % comment
+vars.x     = 1;
+vars.pi    = 2;
 vars.real  = 3;
-vars.i     = 4;   % comment
+vars.i     = 4;
 
-vars.p_lag = 5;   % comment
-vars.y_lag = 6;   % comment
+vars.p_lag = 5;
+vars.y_lag = 6;
 
-vars.rstar = 7;   % comment
-vars.r     = 8;   % comment
+vars.rstar = 7;
+vars.r     = 8;
 vars.u_s   = 9;   % cost push shock

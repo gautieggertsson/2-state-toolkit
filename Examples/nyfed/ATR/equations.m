@@ -47,7 +47,7 @@ eq.pi_lag = 23;
 % shadow interest rate
 eq.R_tr   = 24;  
 % interest debt
-eq.Z      = 25;  % comment
+eq.Z      = 25;
 
 % SHOCKS
 

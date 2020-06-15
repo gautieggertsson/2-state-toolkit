@@ -1,5 +1,6 @@
-%% FRBNY DSGE Model (Del Negro et al, 2013)
-%  Some more text
+%% AVERAGE INFLATION TARGETING
+% FRBNY DSGE Model (Del Negro et al, 2013)
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;
@@ -12,10 +13,10 @@ parameters_20  % model parameters
 matrices_20    % model matrices (A, B)
 
 %% SPECIFY SOLVER CONFIGURATION
-config.taumax       = 200;               % declare the maximum contingency
-config.max_length_2 = 21;                % declare the maximum length of regime 2
+config.taumax       = 200;   % declare the maximum contingency
+config.max_length_2 = 21; % declare the maximum length of regime 2
 config.bound        = -log(param.Rstarn); % declare the bound for the variable subject to it
-config.mono         = 0;                 % switch for monotone k-vector (Josef says how is should be)
+config.mono         = 0; % switch for monotone k-vector (Josef says how is should be)
 
 %% SOLVE
 tic
@@ -26,7 +27,7 @@ toc
 
 %% COMPUTE ADDITIONAL VARIABLES
 % CheckR
-vars.checkR = size(ResM,2)+1;        %to check if ZLB also implied by model
+vars.checkR = size(ResM,2)+1; %to check if ZLB also implied by model
 ResM(:,vars.checkR,:) = 0;
 for tau=1:config.taumax
     for t=1:size(ResM,1)
@@ -41,7 +42,7 @@ for tau=1:config.taumax
 end
 
 % average inflation over last 5 years
-vars.api20 = size(ResM,2)+1;        %to check if ZLB also implied by model
+vars.api20 = size(ResM,2)+1; %to check if ZLB also implied by model
 ResM(:,vars.api20,:) = 0;
 for tau=1:config.taumax
     for t=1:size(ResM,1)

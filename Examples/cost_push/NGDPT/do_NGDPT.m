@@ -1,5 +1,6 @@
 %% NOMINAL GDP TARGET IMPLEMENTED AS TAYLOR RULE
 %  Parametrised with phi_x = phi_pi = 100 to mimick a targeting rule
+% (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clc;
 close all;
