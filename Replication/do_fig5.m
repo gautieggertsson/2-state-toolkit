@@ -97,7 +97,7 @@ line_base = {'-' '--' ':' '-' '-.' '--'};
 
 mod_extra  = [3 4 7 10:12];
 col_extra  = [3 4 6 10 8 12];
-line_extra = {'-' '--' ':' '-.' '-.' '--'};
+line_extra = {'-' '-.' ':' '-.' '-.' '--'};
 
 
 %% ADD STEADY STATE VALUE AS INITIAL ONE (FOR SOME VARIABLES)

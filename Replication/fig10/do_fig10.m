@@ -75,8 +75,8 @@ set(0,'DefaultFigureVisible','on')
 var_lab = {'\hat{Y}','\pi','i'};
 
 mod_base  = [1 2 3];
-col_base  = [2 3 4];
-line_base = {'-' '--' '-.'};
+col_base  = [2 7 4];
+line_base = {'--' '-.' '--'};
 
 
 %% PLOT THE 'cont' CONTINGENCY IN EACH MODEL

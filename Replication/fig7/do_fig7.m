@@ -92,7 +92,7 @@ line_base = {'-' '-.' ':'  ':'   '-'};
 
 mod_extra  = [2,    7,  1,  8,   10,   9,    5    ,13 ];
 col_extra  = [6,   10,  2,  8,   12,   14,   4     3 ];
-line_extra = {':' '-.' '--' '-.' '--' '--'  '--'  '-'};
+line_extra = {':' '-.' '--' '-.' '--' '--'  '-.'  '-'};
 
 
 %% ADD STEADY STATE VALUE AS INITIAL ONE (FOR SOME VARIABLES)

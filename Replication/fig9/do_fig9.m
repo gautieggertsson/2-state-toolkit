@@ -250,14 +250,14 @@ figure()
 subplot(3,2,1); hold on;
 plot(time_com,100*R.TS.dis.IRF(time_com+1,1),'color',colours(2),'LineStyle','--')
 plot(time_com,100*R.TS.com.IRF(time_com+1,1),'color',colours(1))
-plot(time_com,100*R.TS.flfg.IRF(time_com+1,1),'color',colours(12))
+plot(time_com,100*R.TS.flfg.IRF(time_com+1,1),'color',colours(12),'LineStyle','-.')
 ylabel('$$\hat{Y}$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
 subplot(3,2,2); hold on;
 
 plot(time_AR,100*R.AR.dis.IRF(time_AR+1,1),'color',colours(2),'LineStyle','--')
 plot(time_AR,100*R.AR.com.IRF(time_AR+1,1),'color',colours(1))
-plot(time_AR,100*R.AR.flfg.IRF(time_AR+1,1),'color',colours(12))
+plot(time_AR,100*R.AR.flfg.IRF(time_AR+1,1),'color',colours(12),'LineStyle','-.')
 ylabel('$$\hat{Y}$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
 
@@ -265,14 +265,14 @@ set(get(gca,'YLabel'),'Rotation',0)
 subplot(3,2,3); hold on;
 plot(time_com,400*R.TS.dis.IRF(time_com+1,2),'color',colours(2),'LineStyle','--')
 plot(time_com,400*R.TS.com.IRF(time_com+1,2),'color',colours(1))
-plot(time_com,400*R.TS.flfg.IRF(time_com+1,2),'color',colours(12))
+plot(time_com,400*R.TS.flfg.IRF(time_com+1,2),'color',colours(12),'LineStyle','-.')
 ylabel('$$\pi$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
 subplot(3,2,4); hold on;
 
 plot(time_AR,400*R.AR.dis.IRF(time_AR+1,2),'color',colours(2),'LineStyle','--')
 plot(time_AR,400*R.AR.com.IRF(time_AR+1,2),'color',colours(1))
-plot(time_AR,400*R.AR.flfg.IRF(time_AR+1,2),'color',colours(12))
+plot(time_AR,400*R.AR.flfg.IRF(time_AR+1,2),'color',colours(12),'LineStyle','-.')
 ylabel('$$\pi$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
 
@@ -280,7 +280,7 @@ set(get(gca,'YLabel'),'Rotation',0)
 subplot(3,2,5); hold on;
 plot(time_com,400*R.TS.dis.IRF(time_com+1,3),'color',colours(2),'LineStyle','--')
 plot(time_com,400*R.TS.com.IRF(time_com+1,3),'color',colours(1))
-plot(time_com,400*R.TS.flfg.IRF(time_com+1,3),'color',colours(12))
+plot(time_com,400*R.TS.flfg.IRF(time_com+1,3),'color',colours(12),'LineStyle','-.')
 ylabel('$$i$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
 legend('Discretion','Commitment','FLFG','Orientation','horizontal')
@@ -289,7 +289,7 @@ legend boxoff
 subplot(3,2,6); hold on;
 plot(time_AR,400*R.AR.dis.IRF(time_AR+1,3),'color',colours(2),'LineStyle','--')
 plot(time_AR,400*R.AR.com.IRF(time_AR+1,3),'color',colours(1))
-plot(time_AR,400*R.AR.flfg.IRF(time_AR+1,3),'color',colours(12))
+plot(time_AR,400*R.AR.flfg.IRF(time_AR+1,3),'color',colours(12),'LineStyle','-.')
 ylabel('$$i$$','interpreter','latex')
 set(get(gca,'YLabel'),'Rotation',0)
 legend('Discretion','Commitment','FLFG','Orientation','horizontal')

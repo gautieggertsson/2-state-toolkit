@@ -5,9 +5,10 @@ Gauti B. Eggertsson,^ Sergey K. Egiev, Alessandro Lin, Josef Platzer and Luca Ri
 
 ^ gauti_eggertsson@brown.edu  
 
-This repository contains the code base for the toolkit presented in Eggertsson et al. (2020), simple examples to show how the toolkit works as well as replication codes for the paper.
+This repository contains the code base for the toolkit presented in Eggertsson et al. (2020), simple examples to show how the toolkit works as well as replication codes for the paper. The latter will be published gradually over the coming days.  
 
-The latter will be published gradually over the coming days.  
+
+The paper can be dowloaded from https://tinyurl.com/2-state-toolkit.
 
 
 ## SIMPLE EXAMPLES
@@ -57,47 +58,47 @@ Note we add another jump variable i_imp_t (the implied Taylor rule, for expositi
 | Description  | File |
 | -- | -- |
 | FIGURE  1 | Replication/fig1/do_fig1.m |  
-| FIGURE  2  | Replication/do_fig2.m |
-| FIGURE  3  | Replication/do_fig3.m |
-| FIGURE  4  | Replication/do_fig4.m |
-| FIGURE  5  | Replication/do_fig5_tab2.m |
-| FIGURE  7  | Replication/fig7_8_tab3/do_fig7_8_tab3.m | 
-| FIGURE  8  | Replication/fig7_8_tab3/do_fig7_8_tab3.m
-| FIGURE  9  | Replication/fig9/do_fig9.m |  
-| FIGURE 10  | Replication/fig10/do_fig10.m |
+| FIGURE  2 | Replication/do_fig2.m |
+| FIGURE  3 | Replication/do_fig3.m |
+| FIGURE  4 | Replication/do_fig4.m |
+| FIGURE  5 | Replication/do_fig5.m |
+| FIGURE  7 | Replication/fig7/do_fig7.m | 
+| FIGURE  8 | Replication/fig7/do_fig7.m
+| FIGURE  9 | Replication/fig9/do_fig9.m |  
+| FIGURE 10 | Replication/fig10/do_fig10.m |
 |||
-TABLE   2  | Replication/do_fig5_tab2.m |
-TABLE   3  | Replication/fig7_8_tab3/do_fig7_8_tab3.m |
+TABLE   2  | Replication/do_fig5.m |
+TABLE   3  | Replication/fig7/do_fig7.m |
 
 ### APPENDIX
 
 | Description  | File |
 | -- | -- |
-| FIGURE A.1  ||
-| FIGURE A.2  ||
-| FIGURE A.3  ||
-| FIGURE A.4  ||
-| FIGURE A.5  ||
-| FIGURE A.6  ||
-| FIGURE A.7  ||
-| FIGURE A.8  ||
-| FIGURE A.9  ||
-| FIGURE A.10  ||
-| FIGURE A.11  ||
-| FIGURE A.12  ||
-| FIGURE A.13  ||
-| FIGURE A.14  ||
-| FIGURE A.15  ||
-| FIGURE A.16  ||
-| FIGURE A.17  ||
-| FIGURE A.18  ||
-| FIGURE A.19  ||
-| FIGURE A.20  ||
+| FIGURE A.1  | Replication/fig9/do_fig5.m |
+| FIGURE A.2  | Replication/fig9/do_fig5.m |
+| FIGURE A.3  | Replication/fig9/do_fig9.m |
+| FIGURE A.4  | Replication/Appendix/A62/do_figA4.m |
+| FIGURE A.5  | Replication/Appendix/A62/do_figA4.m |
+| FIGURE A.6  | Replication/Appendix/A62/do_figA4.m |
+| FIGURE A.7  | Replication/Appendix/A62/do_figA4.m |
+| FIGURE A.8  | Replication/Appendix/A62/do_figA8.m |
+| FIGURE A.9  | Replication/Appendix/A62/do_figA8.m |
+| FIGURE A.10 | Replication/Appendix/A62/do_figA8.m |
+| FIGURE A.11 | Replication/Appendix/A62/do_figA8.m |
+| FIGURE A.12 ||
+| FIGURE A.13 ||
+| FIGURE A.14 ||
+| FIGURE A.15 ||
+| FIGURE A.16 ||
+| FIGURE A.17 ||
+| FIGURE A.18 ||
+| FIGURE A.19 ||
+| FIGURE A.20 ||
 | FIGURE A.21 ||
 |||
 TABLE A.1  ||
 TABLE A.2  ||
-TABLE A.3  ||
-TABLE A.4  ||
+TABLE A.3  | Replication/Appendix/A62/do_figA4.m |
+TABLE A.4  | Replication/Appendix/A62/do_figA8.m |
 TABLE A.5  ||
 TABLE A.6  ||

@@ -75,7 +75,7 @@ set(0,'DefaultFigureVisible','on')
 var_lab = {'\hat{Y}','\pi','i','\hat{N}'};
 mod_base  = [1 2 3 4];
 col_base  = [1 2 3 4];
-line_base = {'-' '--' '-' '--'};
+line_base = {'-' '--' '-' '-.'};
 
 
 %% ADD STEADY STATE VALUE AS INITIAL ONE (FOR SOME VARIABLES)
