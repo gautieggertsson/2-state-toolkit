@@ -85,10 +85,10 @@ TABLE   3  | Replication/fig7/do_fig7.m |
 | FIGURE A.9  | Replication/Appendix/A62/do_figA8.m |
 | FIGURE A.10 | Replication/Appendix/A62/do_figA8.m |
 | FIGURE A.11 | Replication/Appendix/A62/do_figA8.m |
-| FIGURE A.12 ||
-| FIGURE A.13 ||
-| FIGURE A.14 ||
-| FIGURE A.15 ||
+| FIGURE A.12 | Replication/Appendix/A64/do_figA12.m |
+| FIGURE A.13 | Replication/Appendix/A64/do_figA12.m |
+| FIGURE A.14 | Replication/Appendix/A64/do_figA12.m |
+| FIGURE A.15 | Replication/Appendix/A64/do_figA12.m |
 | FIGURE A.16 ||
 | FIGURE A.17 ||
 | FIGURE A.18 ||
@@ -100,5 +100,5 @@ TABLE A.1  ||
 TABLE A.2  ||
 TABLE A.3  | Replication/Appendix/A62/do_figA4.m |
 TABLE A.4  | Replication/Appendix/A62/do_figA8.m |
-TABLE A.5  ||
+TABLE A.5  | Replication/Appendix/A64/do_figA12.m |
 TABLE A.6  ||

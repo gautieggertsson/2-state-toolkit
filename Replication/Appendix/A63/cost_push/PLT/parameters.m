@@ -1,5 +1,5 @@
 % Parameters
-% Calibration: Eggertsson and Woodford (2003) with drop in output = 7.5% and drop in inf = 0.5%
+% Calibration: Eggertsson and Woodford (2003) with drop in output = 7.5% and drop in inf = 2%
 
 param.NS      = 1;   
 
