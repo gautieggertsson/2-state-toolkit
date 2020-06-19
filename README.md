@@ -89,7 +89,7 @@ TABLE   3  | Replication/fig7/do_fig7.m |
 | FIGURE A.13 | Replication/Appendix/A64/do_figA12.m |
 | FIGURE A.14 | Replication/Appendix/A64/do_figA12.m |
 | FIGURE A.15 | Replication/Appendix/A64/do_figA12.m |
-| FIGURE A.16 ||
+| FIGURE A.16 | Replication/fig9/do_fig9.m | 
 | FIGURE A.17 ||
 | FIGURE A.18 ||
 | FIGURE A.19 ||

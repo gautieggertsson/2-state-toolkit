@@ -295,3 +295,63 @@ set(get(gca,'YLabel'),'Rotation',0)
 legend('Discretion','Commitment','FLFG','Orientation','horizontal')
 legend boxoff
 clearvars -except R config
+
+
+%% 3.2) OUT - FIGURES - PLOT CONTINGENCIES
+figure()
+time_com = 0:50;
+time_fg  = 0:30;
+
+% Output - Committment
+subplot(3,2,1); hold on;
+plot(time_com,100*R.TS.com.IRF(time_com+1,1),'color',colours(1))
+for c = 14:24
+    plot(time_com,100*R.TS.com.ResM(time_com+1,1,c),'color',colours(13))
+end
+ylabel('$$\hat{Y}$$','interpreter','latex')
+set(get(gca,'YLabel'),'Rotation',0)
+
+% Output - FLFG
+subplot(3,2,2); hold on;
+plot(time_fg,100*R.TS.flfg.IRF(time_fg+1,1),'color',colours(12))
+for c = 14:24
+    plot(time_fg,100*R.TS.flfg.ResM(time_fg+1,1,c),'color',colours(13))
+end
+ylabel('$$\hat{Y}$$','interpreter','latex')
+set(get(gca,'YLabel'),'Rotation',0)
+
+% Inflation - Committment
+subplot(3,2,3); hold on;
+plot(time_com, 400*R.TS.com.IRF(time_com+1,2),'color',colours(1))
+for c = 14:24
+    plot(time_com, 400*R.TS.com.ResM(time_com+1,2,c),'color',colours(13))
+end
+ylabel('$$\pi$$','interpreter','latex')
+set(get(gca,'YLabel'),'Rotation',0)
+
+% Inflation - FLFG
+subplot(3,2,4); hold on;
+plot(time_fg, 400*R.TS.flfg.IRF(time_fg+1,2),'color',colours(12))
+for c = 14:24
+    plot(time_fg,400*R.TS.flfg.ResM(time_fg+1,2,c),'color',colours(13))
+end
+ylabel('$$\pi$$','interpreter','latex')
+set(get(gca,'YLabel'),'Rotation',0)
+
+% Interest rate - Committment
+subplot(3,2,5); hold on;
+plot(time_com, 400*R.TS.com.IRF(time_com+1,3),'color',colours(1))
+for c = 14:24
+    plot(time_com, 400*R.TS.com.ResM(time_com+1,3,c),'color',colours(13))
+end
+ylabel('$$i$$','interpreter','latex')
+set(get(gca,'YLabel'),'Rotation',0)
+
+% Interest rate - FLFG
+subplot(3,2,6); hold on;
+plot(time_fg, 400*R.TS.flfg.IRF(time_fg+1,3),'color',colours(12))
+for c = 14:24
+    plot(time_fg, 400*R.TS.flfg.ResM(time_fg+1,3,c),'color',colours(13))
+end
+ylabel('$$i$$','interpreter','latex')
+set(get(gca,'YLabel'),'Rotation',0)
