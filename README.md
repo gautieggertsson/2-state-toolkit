@@ -101,4 +101,4 @@ TABLE A.2  ||
 TABLE A.3  | Replication/Appendix/A62/do_figA4.m |
 TABLE A.4  | Replication/Appendix/A62/do_figA8.m |
 TABLE A.5  | Replication/Appendix/A64/do_figA12.m |
-TABLE A.6  ||
+TABLE A.6  | Replication/Appendix/A65/do_tabA6.m |
