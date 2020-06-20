@@ -96,8 +96,6 @@ TABLE   3  | Replication/fig7/do_fig7.m |
 | FIGURE A.20 ||
 | FIGURE A.21 ||
 |||
-TABLE A.1  ||
-TABLE A.2  ||
 TABLE A.3  | Replication/Appendix/A62/do_figA4.m |
 TABLE A.4  | Replication/Appendix/A62/do_figA8.m |
 TABLE A.5  | Replication/Appendix/A64/do_figA12.m |
