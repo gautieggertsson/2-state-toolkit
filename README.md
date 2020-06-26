@@ -55,48 +55,48 @@ Note we add another jump variable i_imp_t (the implied Taylor rule, for expositi
 
 ## REPLICATION
 
-| Description  | File |
-| -- | -- |
-| FIGURE  1 | Replication/fig1/do_fig1.m |  
-| FIGURE  2 | Replication/do_fig2.m |
-| FIGURE  3 | Replication/do_fig3.m |
-| FIGURE  4 | Replication/do_fig4.m |
-| FIGURE  5 | Replication/do_fig5.m |
-| FIGURE  7 | Replication/fig7/do_fig7.m | 
-| FIGURE  8 | Replication/fig7/do_fig7.m
-| FIGURE  9 | Replication/fig9/do_fig9.m |  
-| FIGURE 10 | Replication/fig10/do_fig10.m |
-|||
-TABLE   2  | Replication/do_fig5.m |
-TABLE   3  | Replication/fig7/do_fig7.m |
+| Description  | File             |
+| --           | --               | 
+| FIGURE  1    | fig1/do_fig1.m   |  
+| FIGURE  2    | do_fig2.m        |
+| FIGURE  3    | do_fig3.m        |
+| FIGURE  4    | do_fig4.m        |
+| FIGURE  5    | do_fig5.m        |
+| FIGURE  7    | fig7/do_fig7.m   | 
+| FIGURE  8    | fig7/do_fig7.m   |
+| FIGURE  9    | fig9/do_fig9.m   |  
+| FIGURE 10    | fig10/do_fig10.m |
+|              |                  |
+| TABLE   2    | do_fig5.m        |
+| TABLE   3    | fig7/do_fig7.m   |
 
 ### APPENDIX
 
-| Description  | File |
-| -- | -- |
-| FIGURE A.1  | Replication/fig9/do_fig5.m |
-| FIGURE A.2  | Replication/fig9/do_fig5.m |
-| FIGURE A.3  | Replication/fig9/do_fig9.m |
-| FIGURE A.4  | Replication/Appendix/A62/do_figA4.m |
-| FIGURE A.5  | Replication/Appendix/A62/do_figA4.m |
-| FIGURE A.6  | Replication/Appendix/A62/do_figA4.m |
-| FIGURE A.7  | Replication/Appendix/A62/do_figA4.m |
-| FIGURE A.8  | Replication/Appendix/A62/do_figA8.m |
-| FIGURE A.9  | Replication/Appendix/A62/do_figA8.m |
-| FIGURE A.10 | Replication/Appendix/A62/do_figA8.m |
-| FIGURE A.11 | Replication/Appendix/A62/do_figA8.m |
-| FIGURE A.12 | Replication/Appendix/A64/do_figA12.m |
-| FIGURE A.13 | Replication/Appendix/A64/do_figA12.m |
-| FIGURE A.14 | Replication/Appendix/A64/do_figA12.m |
-| FIGURE A.15 | Replication/Appendix/A64/do_figA12.m |
-| FIGURE A.16 | Replication/fig9/do_fig9.m | 
-| FIGURE A.17 ||
-| FIGURE A.18 ||
-| FIGURE A.19 ||
-| FIGURE A.20 ||
-| FIGURE A.21 ||
-|||
-TABLE A.3  | Replication/Appendix/A62/do_figA4.m |
-TABLE A.4  | Replication/Appendix/A62/do_figA8.m |
-TABLE A.5  | Replication/Appendix/A64/do_figA12.m |
-TABLE A.6  | Replication/Appendix/A65/do_tabA6.m |
+| Description | File                     |
+| --          | --                       |
+| FIGURE A.1  | fig9/do_fig5.m           |
+| FIGURE A.2  | fig9/do_fig5.m           |
+| FIGURE A.3  | fig9/do_fig9.m           |
+| FIGURE A.4  | Appendix/A62/do_figA4.m  |
+| FIGURE A.5  | Appendix/A62/do_figA4.m  |
+| FIGURE A.6  | Appendix/A62/do_figA4.m  |
+| FIGURE A.7  | Appendix/A62/do_figA4.m  |
+| FIGURE A.8  | Appendix/A62/do_figA8.m  |
+| FIGURE A.9  | Appendix/A62/do_figA8.m  |
+| FIGURE A.10 | Appendix/A62/do_figA8.m  |
+| FIGURE A.11 | Appendix/A62/do_figA8.m  |
+| FIGURE A.12 | Appendix/A64/do_figA12.m |
+| FIGURE A.13 | Appendix/A64/do_figA12.m |
+| FIGURE A.14 | Appendix/A64/do_figA12.m |
+| FIGURE A.15 | Appendix/A64/do_figA12.m |
+| FIGURE A.16 | fig9/do_fig9.m           | 
+| FIGURE A.17 | fig7/do_fig7.m           |
+| FIGURE A.18 | fig7/do_fig7.m           |
+| FIGURE A.19 | fig7/do_fig7.m           |
+| FIGURE A.20 | fig7/do_fig7.m           |
+| FIGURE A.21 | fig7/do_fig7.m           |
+|             |                          |
+| TABLE A.3   | Appendix/A62/do_figA4.m  |
+| TABLE A.4   | Appendix/A62/do_figA8.m  |
+| TABLE A.5   | Appendix/A64/do_figA12.m |
+| TABLE A.6   | Appendix/A65/do_tabA6.m  |
