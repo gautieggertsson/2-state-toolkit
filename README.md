@@ -40,10 +40,10 @@ The Examples folder contains files from which the user can learn how to use the 
 - initial values are [0 0 0 ..]  by default.
 - the user should input values if there are state variables. (see file parameters.m)
 
-The model is:
-E_t(x_{t+1}) + sigma E_t(pi_{t+1}) + r^n_t = x_t + sigma i_t  
-beta E_t(pi_{t+1}) = pi_t - kappa x_t  
-i_t = max(0,psi_i i_{t-1} + (1-psi_i)(r_star + psi_pi pi_{t-1} + psi_x x_{t-1}))  
+The model equations are:  
+1. E_t(x_{t+1}) + sigma E_t(pi_{t+1}) + r^n_t = x_t + sigma i_t
+2. beta E_t(pi_{t+1}) = pi_t - kappa x_t
+3. i_t = max(0,psi_i i_{t-1} + (1-psi_i)(r_star + psi_pi pi_{t-1} + psi_x x_{t-1}))
 
 - The jump variables are x_t, pi_t and i_t  
 - The pre-determined variables are x_{t-1}, pi_{t-1} and i_{t-1}
