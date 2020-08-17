@@ -37,13 +37,13 @@ k   = [0 5*ones(1,config.taumax-1)];
 [D_1,G_1, ResM, max_k,k,T_tilde]    = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'verbose',1,'R0_search',0,'k_input',k);
 
 % Rescale into annualized values
-ResM(:,vars.x,:)    = ResM(:,vars.x,:)*100;
-ResM(:,vars.pi,:)   = ResM(:,vars.pi,:)*400;
-ResM(:,vars.i,:)    = ResM(:,vars.i,:)*400;
-ResM(:,vars.i_imp,:)= ResM(:,vars.i_imp,:)*400;
+ResM(:,vars.x,:)     = ResM(:,vars.x,:)*100;
+ResM(:,vars.pi,:)    = ResM(:,vars.pi,:)*400;
+ResM(:,vars.i,:)     = ResM(:,vars.i,:)*400;
+ResM(:,vars.i_imp,:) = ResM(:,vars.i_imp,:)*400;
 
 %	1.1) COMPUTE IMPULSE RESPONSES
 impulseresponse
 
 %   1.2) PLOT IMPULSE RESPONSES
-graphing(IR,vars,25,["pi","x","i","i_imp"],ResM,[])
+graphing(IR,vars,25,'variables',{'pi','x','i','i_imp'})

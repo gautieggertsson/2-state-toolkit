@@ -45,4 +45,4 @@ ResM(:,vars.i_imp,:) = ResM(:,vars.i_imp,:)*400;
 impulseresponse
 
 %   1.2) PLOT IMPULSE RESPONSES
-graphing(IR,vars,25,["pi","x","i","i_imp"],ResM,[])
+graphing(IR,vars,25,'variables',{'pi','x','i','i_imp'})

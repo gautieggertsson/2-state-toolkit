@@ -70,4 +70,4 @@ impulseresponse
 
 
 %% PLOT IMPULSE RESPONSES
-graphing(IR,vars,25,["i","pi","x","phi1"],ResM,1:5:200)
+graphing(IR,vars,25,'variables',{'i','pi','x','phi1'},'cont_data',ResM,'cont_num',1:5:200)

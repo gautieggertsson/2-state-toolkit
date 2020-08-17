@@ -111,4 +111,4 @@ param.NY = numel(fieldnames(vars));
 impulseresponse
 
 %% PLOT IMPULSE RESPONSES
-graphing(IR,vars,30,["xi","pi","c","i","y","R","checkR","dcheckR","wtilde","w","Rtilde","L","u","mc","rk","k","ipast","kbarpast","qpast","npast","Rpast","cpast","wpast","pip19","api20","sigmapast","b","sigma"],ResM,[2:1:30])
+graphing(IR,vars,30,'variables',{'xi','pi','c','i','y','R','checkR','dcheckR','wtilde','w','Rtilde','L','u','mc','rk','k','ipast','kbarpast','qpast','npast','Rpast','cpast','wpast','pip19','api20','sigmapast','b','sigma'},'cont_data',ResM,'cont_num',[2:30])

@@ -74,4 +74,4 @@ param.NY = numel(fieldnames(vars));
 impulseresponse
 
 %% PLOT IMPULSE RESPONSES
-graphing(IR,vars,100,["i","pi","x","i_tr","z","i_rule","phi1"],ResM,1:100)
+graphing(IR,vars,100,'variables',{'i','pi','x','i_tr','z','i_rule','phi1'},'cont_data',ResM,'cont_num',1:100)
