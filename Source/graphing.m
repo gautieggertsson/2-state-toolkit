@@ -42,10 +42,15 @@ cont_data = p.Results.cont_data;
 cont_var  = p.Results.cont_num;
 clear p;
 
+%% IRF VARS
+IRF_vars = zeros(length(labels),1);
+for i = 1:length(labels)
+    IRF_vars(i) = eval(strcat('var.',labels{i}));
+end
+clear i
+
 %% GET THE NUMBER OF FIGURES
 total_vars = max(size(labels));
-IRF_vars = ones(1,total_vars);
-
 total_figs = floor(total_vars/4);
 if mod(total_vars,4) ~= 0
     total_figs = total_figs + 1;
