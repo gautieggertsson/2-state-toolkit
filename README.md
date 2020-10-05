@@ -8,9 +8,6 @@ Gauti B. Eggertsson,^ Sergey K. Egiev, Alessandro Lin, Josef Platzer and Luca Ri
 This repository contains the code base for the toolkit presented in Eggertsson et al. (2020), simple examples to show how the toolkit works as well as replication codes for the paper.
 
 
-The paper can be downloaded from https://tinyurl.com/2-state-toolkit.
-
-
 ## SIMPLE EXAMPLES
 
 | Description  | File |
