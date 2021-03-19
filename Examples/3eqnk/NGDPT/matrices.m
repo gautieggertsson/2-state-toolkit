@@ -33,5 +33,3 @@ AAA(eq.rule,vars.p_lag) = -param.phi_pi;
 BBB(eq.rule,vars.i)     = -1;
 BBB(eq.rule,vars.rstar) = 1;
 BBB(eq.rule,vars.x)     = param.phi_x;
-
-

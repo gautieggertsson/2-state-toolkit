@@ -25,8 +25,8 @@ config.mono         = 1;   % switch for monotone k-vector
 
 
 %% SOLVE
-[D_3,G_3,D_3a]           = regime3(AAA,BBB,param);
-[D_2,G_2]                = regime2(AAA,BBB,D_3a,param,config);
+[D_3,G_3,D_3a] = regime3(AAA,BBB,param);
+[D_2,G_2]      = regime2(AAA,BBB,D_3a,param,config);
 [D_1,G_1, ResM, max_k,k] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config);
 
 

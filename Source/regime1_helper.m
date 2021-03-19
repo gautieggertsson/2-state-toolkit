@@ -15,13 +15,13 @@
 % here we are constructing the matrices as functions of k, and we call them
 % in the function regime1.m
 
-%% INPUTS
+%% INPUT
 % This function takes as inputs:
 % - transiton matrices D_2 and D_3a
 % - model matrices A and B in regime 1 (IMPORTANT!)
 % - probability of the Markov process
 
-%% OUTPUTS
+%% OUTPUT
 % It will deliver a structure with auxiliary matrices to be used in the
 % loop to calculate transition matrices in regime 1
 

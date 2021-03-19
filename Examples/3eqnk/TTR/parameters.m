@@ -1,7 +1,7 @@
 % Parameters
 % Calibration: Eggertsson and Woodford (2003)
 
-param.NS      = 3;
+param.NS      = 5;
 
 param.theta   = 7.87;
 param.kappa   = 0.02;
@@ -18,5 +18,5 @@ param.lagr_pi = 1;
 param.rl      = -0.005;
 param.rh      = 1/param.beta-1;
 
-param.rl = [param.rh;param.rl];
-param.rh = [param.rh;param.rh];
+param.sl = [param.rh;param.rl];
+param.sh = [param.rh;param.rh];

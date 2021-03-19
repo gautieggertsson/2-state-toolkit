@@ -83,21 +83,21 @@ elseif nyfed == 1
         load('GDP_data.mat')
         load('inflation_data.mat')
         load('interest_data.mat')
-        load('ngdp_data');
-        load('plevel_data');
-        load('ngdpi_data');
-        load('gamma_data');
-        load('D_data');
+        load('ngdp_data')
+        load('plevel_data')
+        load('ngdpi_data')
+        load('gamma_data')
+        load('D_data')
         %load('investment_data.mat') var name: investment
         observations      = zeros(49,8);
         startidx          = 11;
-        observations(:,1) = GDP_deviations(startidx:end); %start from Q1 2008; Q3 2019
-        observations(:,2) = inflation(startidx:end);
-        observations(:,3) = interest(startidx:end);
-        observations(:,4) = price_level(startidx:end)-price_level(startidx);
-        observations(:,5) = ngdp_implied(startidx:end)-ngdp_implied(startidx);
-        observations(:,6) = gamma_index(startidx:end)-gamma_index(startidx);
-        observations(:,7) = D_index(startidx:end)-D_index(startidx);
+        observations(:,1) = GDP_deviations(startidx:end-2); %start from Q1 2008; Q3 2019
+        observations(:,2) = inflation(startidx:end-2);
+        observations(:,3) = interest(startidx:end-1);
+        observations(:,4) = price_level(startidx:end-2)-price_level(startidx);
+        observations(:,5) = ngdp_implied(startidx:end-2)-ngdp_implied(startidx);
+        observations(:,6) = gamma_index(startidx:end-2)-gamma_index(startidx);
+        observations(:,7) = D_index(startidx:end-2)-D_index(startidx);
     end
     
     figure()

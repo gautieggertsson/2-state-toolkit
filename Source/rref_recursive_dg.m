@@ -34,12 +34,12 @@
 %
 % The function produces the matrices C1 C2 C3 C4.
 
-%% INPUTS
+%% INPUT
 % This function takes as input:
 % - matrices A and B
 % - number of state variables
 
-%% OUTPUTS
+%% OUTPUT
 % This function delivers 4 matrix blocks corresponding to a reduced row
 % echelon form of a modified matrix
 

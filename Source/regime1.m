@@ -8,7 +8,7 @@
 % the variables over time for each of the different contingency. The
 % function also checkes that the contstraint is not violated in regime 3.
 
-%% INPUTS
+%% INPUT
 % This function takes as inputs:
 % - model matrices
 % - LOW and HIGH state Markov parameters (rl, rh and mu)
@@ -24,7 +24,7 @@
 % - the indicator of whether to apply monotonicity assumption
 % - the vector of durations k
 
-%% OUTPUTS
+%% OUTPUT
 % It will deliver a series of two transition matrices (D and G)
 % corresponding to the distance from the start of REGIME3
 
@@ -53,8 +53,8 @@ clear p varargin;
 A   = AAA;                  % this matrix will be fed to the rref function after some minor modification
 B   = BBB;                  % same for this other matrix
 NY  = size(AAA,1);          % count the number of variables
-nshocks = size(param.rl,1); % count the number of shocks
-NK  = param.NS+nshocks+1;   % count the state variables + shocks + i
+nshocks = size(param.sl,1); % count the number of shocks
+NK  = param.NS+1;           % count the state variables + shocks + 1
 
 D_1 = zeros((NY-NK),NK,(config.taumax-1)); % preallocate transition matrices
 G_1 = zeros(NK,NK,(config.taumax-1));
@@ -73,10 +73,10 @@ end
 %% substitute the value of the Markov vector in LOW state in the matrices A and B
 %   IMPORTANT it is substituting for the shocks value in all equations but
 %   the shock equations
-A(1:end-nshocks-1,end-nshocks+1:end)  = AAA(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.rl',NY-nshocks-1,1);
-B(1:end-nshocks-1,end-nshocks+1:end)  = BBB(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.rl',NY-nshocks-1,1);
-A(end,end-nshocks+1:end)  = AAA(end,end-nshocks+1:end).*param.rl';
-B(end,end-nshocks+1:end)  = BBB(end,end-nshocks+1:end).*param.rl';
+A(1:end-nshocks-1,end-nshocks+1:end)  = AAA(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.sl',NY-nshocks-1,1);
+B(1:end-nshocks-1,end-nshocks+1:end)  = BBB(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.sl',NY-nshocks-1,1);
+A(end,end-nshocks+1:end)  = AAA(end,end-nshocks+1:end).*param.sl';
+B(end,end-nshocks+1:end)  = BBB(end,end-nshocks+1:end).*param.sl';
 
 %% substitute the policy rule and the interest rate coefficients to zero
 A(end,:)        = zeros(1,NY);  % here we substitute the policy rule with all zeros
@@ -91,10 +91,10 @@ aux = regime1_helper(D_3a,D_2,A,B,param.mu);
 % equal to 1
 A0   = AAA;                  % this matrix will be fed to the rref function after some minor modification
 B0   = BBB;
-A0(1:end-nshocks-1,end-nshocks+1:end)  = AAA(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.rl',NY-nshocks-1,1);
-B0(1:end-nshocks-1,end-nshocks+1:end)  = BBB(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.rl',NY-nshocks-1,1);
-A0(end,end-nshocks+1:end)  = AAA(end,end-nshocks+1:end).*param.rl';
-B0(end,end-nshocks+1:end)  = BBB(end,end-nshocks+1:end).*param.rl';
+A0(1:end-nshocks-1,end-nshocks+1:end)  = AAA(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.sl',NY-nshocks-1,1);
+B0(1:end-nshocks-1,end-nshocks+1:end)  = BBB(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.sl',NY-nshocks-1,1);
+A0(end,end-nshocks+1:end)  = AAA(end,end-nshocks+1:end).*param.sl';
+B0(end,end-nshocks+1:end)  = BBB(end,end-nshocks+1:end).*param.sl';
 
 A_r0 = [A0,zeros(NY,1)];       % add column of zeros at the end
 A_r0 = [A_r0;[zeros(1,NY),1]]; % add row of zeros, with 1 in last column for r_0_shock
@@ -128,7 +128,7 @@ while T_tilde_bad
     while status_k_bad
         % call the function that traces the history of the variables and
         % returns a check on the correctness of the k-vector
-        [D_1,G_1,ResM,wrong_tau,status_k_bad] = regime1_given_k(A,B,A_r0,A0,B_r0,B0,D_3a,D_3,G_3,D_2a,D_2,G_2,k,T_tilde,param.rl,param.rh,aux,config,param.init_cond);
+        [D_1,G_1,ResM,wrong_tau,status_k_bad] = regime1_given_k(A,B,A_r0,A0,B_r0,B0,D_3a,D_3,G_3,D_2a,D_2,G_2,k,T_tilde,param.sl,param.sh,aux,config,param.init_cond);
         
         if wrong_tau < 0
             % if the guessed k works, then go out of k loop

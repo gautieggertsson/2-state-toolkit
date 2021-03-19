@@ -42,6 +42,9 @@ cont_data = p.Results.cont_data;
 cont_var  = p.Results.cont_num;
 clear p;
 
+horizon = min(horizon,size(IR,1));
+
+
 %% IRF VARS
 IRF_vars = zeros(length(labels),1);
 for i = 1:length(labels)
@@ -85,8 +88,8 @@ if total_vars >=4
 else
     % If 3 or fewer subplots
     figure()
-    for j =1:size(IRF_vars,2) 
-        subplot(size(IRF_vars,2),1,j);
+    for j =1:size(IRF_vars,1) 
+        subplot(size(IRF_vars,1),1,j);
         if and(cont_var > 0, isempty(cont_data) == 0)
             hold on
             for q = cont_var

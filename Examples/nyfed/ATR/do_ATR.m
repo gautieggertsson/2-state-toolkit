@@ -6,11 +6,13 @@ clc;
 close all;
 addpath('../../../Source')
 
+
 %% SPECIFY MODEL AND CALIBRATION
 variables  % vector of variables [Z_t P_(t-1)]'
 equations  % name equations
 parameters % model parameters 
 matrices   % model matrices (A, B)
+
 
 %% SPECIFY SOLVER CONFIGURATION
 config.taumax       = 200;   % declare the maximum contingency
@@ -18,27 +20,14 @@ config.max_length_2 = 21; % declare the maximum length of regime 2
 config.bound        = -log(param.Rstarn); % declare the bound for the variable subject to it
 config.mono         = 0; % switch for monotone k-vector
 
+
 %% SOLVE
-tic
-[D_3,G_3,D_3a]           = regime3(AAA,BBB,param);
-[D_2,G_2]                = regime2(AAA,BBB,D_3a,param,config);
-[D_1,G_1, ResM, max_k,k,T_tilde] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'verbose',1);
-toc 
+[D_3,G_3,D_3a] = regime3(AAA,BBB,param);
+[D_2,G_2]      = regime2(AAA,BBB,D_3a,param,config);
+[D_1,G_1, ResM, max_k,k,T_tilde] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config); 
 
-% %% COMPUTE ADDITIONAL VARIABLES
-% CheckR
-vars.checkR = size(ResM,2)+1; %to check if ZLB also implied by model
-ResM(:,vars.checkR,:) = 0;
-for tau=1:config.taumax
-    ResM(:,vars.checkR,tau) = ResM(:,vars.R_tr,tau) - param.alpha_ATR*...
-        [ResM(2:end,vars.Z,tau);0]; %without max operator
-end
 
-% DCheckR
-vars.dcheckR = size(ResM,2)+1;
-ResM(:,vars.dcheckR,:) = 0;
-ResM(1:end,vars.dcheckR,:) = ResM(1:end,vars.R,:)-ResM(1:end,vars.checkR,:); 
-
+%% COMPUTE ADDITIONAL VARIABLES
 % plevel gap
 vars.hat_P = size(ResM,2)+1;
 ResM(:,vars.hat_P,:) = 0;
@@ -85,8 +74,10 @@ end
 
 param.NY = numel(fieldnames(vars));
 
+
 %% COMPUTE IMPULSE RESPONSES
 impulseresponse
 
+
 %% PLOT IMPULSE RESPONSES
-graphing(IR,vars,50,'variables',{'y','R','pi','checkR','dcheckR','R_tr','c','i','k','Z','b','sigma'},'cont_data',ResM,'cont_num',[2:5:50])
+graphing(IR,vars,50,'cont_data',ResM,'cont_num',2:5:50)

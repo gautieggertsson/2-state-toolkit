@@ -1,7 +1,7 @@
 %% EXAMPLE 2 - Exclude Regime-0, Specify Exogenous T-tilde
 % The example is based on a simple 3-equation New-Keynesian Model featuring
 % a Truncated Taylor rule with backward looking component.
-% See readme.md additional details.
+% See readme.md and appendix for additional details.
 % (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clear;
@@ -15,10 +15,10 @@ addpath('Common')
 %%  0) CONFIGURATION
 
 %   0.1) SPECIFY SOLVER CONFIGURATION
-config.taumax       = 400; % declare the maximum contingency
-config.max_length_2 = 50;  % declare the maximum length of regime 2
-config.bound        = 0;   % declare the bound for the variable subject to it
-config.mono         = 1;   % switch for monotone k-vector
+config.taumax       = 400;       % declare the maximum contingency
+config.max_length_2 = 50;        % declare the maximum length of regime 2
+config.bound        = 0;         % declare the bound for the variable subject to it
+config.mono         = 1;         % switch for monotone k-vector
 config.trh          = -exp(-14); % declare a numerical threshold for which the constraint is thought as binding. i.e. if i < bound +trh, then lower bound counts as being violated
 
 %   0.2) SPECIFY MODEL AND CALIBRATION
@@ -29,11 +29,11 @@ matrices    % model matrices (A, B)
 
 
 %%  1) RUN WITH T_TILDE AND NO R0 SEARCH
-input_T_tilde = 5; % choose that regime 1 starts at period 5 (nominal rate could become negative in regime 0)
+param.T_tilde = 5; % choose that regime 1 starts at period 5 (nominal rate could become negative in regime 0)
 
-[D_3,G_3,D_3a]                      = regime3(AAA,BBB,param);
-[D_2,G_2]                           = regime2(AAA,BBB,D_3a,param,config); 
-[D_1,G_1, ResM, max_k,k,T_tilde]    = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'verbose',1,'R0_search',0,'T_tilde_input',input_T_tilde);
+[D_3,G_3,D_3a]                   = regime3(AAA,BBB,param);
+[D_2,G_2]                        = regime2(AAA,BBB,D_3a,param,config); 
+[D_1,G_1, ResM, max_k,k,T_tilde] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'verbose',1,'R0_search',0,'T_tilde_input',param.T_tilde);
 
 % Rescale into annualized values
 ResM(:,vars.x,:)     = ResM(:,vars.x,:)*100;

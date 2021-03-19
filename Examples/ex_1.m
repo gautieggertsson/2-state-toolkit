@@ -1,7 +1,7 @@
 %% EXAMPLE 1 - Simple Policy Rule with State Variable
 % The example is based on a simple 3-equation New-Keynesian Model featuring
 % a Truncated Taylor rule with backward looking component.
-% See readme.md for additional details.
+% See readme.md and appendix for additional details.
 % (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clear;
@@ -28,9 +28,9 @@ matrices   % model matrices (A, B)
 
 
 %%  1) RUN BASELINE RULE
-[D_3,G_3,D_3a]                      = regime3(AAA,BBB,param);
-[D_2,G_2]                           = regime2(AAA,BBB,D_3a,param,config);
-[D_1,G_1, ResM, max_k,k,T_tilde]    = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'verbose',1);
+[D_3,G_3,D_3a]                   = regime3(AAA,BBB,param);
+[D_2,G_2]                        = regime2(AAA,BBB,D_3a,param,config);
+[D_1,G_1, ResM, max_k,k,T_tilde] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'verbose',1);
 
 % Rescale into annualized values
 ResM(:,vars.x,:)     = ResM(:,vars.x,:)*100;
@@ -43,4 +43,3 @@ impulseresponse
 
 %   1.2) PLOT IMPULSE RESPONSES
 graphing(IR,vars,25,'variables',{'pi','x','i','i_imp'})
-

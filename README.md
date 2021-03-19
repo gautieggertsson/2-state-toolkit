@@ -5,20 +5,21 @@ Gauti B. Eggertsson,^ Sergey K. Egiev, Alessandro Lin, Josef Platzer and Luca Ri
 
 ^ gauti_eggertsson@brown.edu  
 
-This repository contains the code base for the toolkit presented in Eggertsson et al. (2020), simple examples to show how the toolkit works as well as replication codes for the paper.
+This repository contains the MATLAB code base for the toolkit presented in Eggertsson et al. (2021), simple examples to show how the toolkit works as well as replication codes for the paper.
+
+
+The Examples folder contains stand-alone files from which the user can learn how to use the toolkit and its features.
+Many of these files are used to generate the results reported in the Eggertsson et al. (2021), so they often do not clear the workspace before execution. Please make sure your workspace is empty before executing them. 
 
 
 ## SIMPLE EXAMPLES
 
-| Description  | File |
-| -- | -- |
-| SIMPLE POLICY RULE WITH STATE VARIABLE | Examples/ex_1.m   |
+| Description                                    | File            |
+| --                                             | --              |
+| SIMPLE POLICY RULE WITH STATE VARIABLE         | Examples/ex_1.m |
 | EXCLUDE REGIME 0 BUT SPECIFY EXOGENOUS T-TILDE | Examples/ex_2.m |
-| EXCLUDE BOTH REGIME 0 AND EXOGENOUS T-TILDE | Examples/ex_3.m |
-| EXCLUDE REGIME 0 AND IMPOSE EXOGENOUS K | Examples/ex_4.m |
-| EXCLUDE INITIAL VALUES | Examples/ex_5.m |
-
-The Examples folder contains files from which the user can learn how to use the toolkit and its features.
+| EXCLUDE BOTH REGIME 0 AND EXOGENOUS T-TILDE    | Examples/ex_3.m |
+| EXCLUDE REGIME 0 AND IMPOSE EXOGENOUS K        | Examples/ex_4.m |
 
 *T-tilde:*
 - T-tilde is 1 by default.
@@ -37,12 +38,12 @@ The Examples folder contains files from which the user can learn how to use the 
 - initial values are [0 0 0 ..]  by default.
 - the user should input values if there are state variables. (see file parameters.m)
 
-The model equations are:  
-1. E_t(x_{t+1}) + sigma E_t(pi_{t+1}) + r^n_t = x_t + sigma i_t
-2. beta E_t(pi_{t+1}) = pi_t - kappa x_t
-3. i_t = max(0,psi_i i_{t-1} + (1-psi_i)(r_star + psi_pi pi_{t-1} + psi_x x_{t-1}))
+The model is:
+E_t(x_{t+1}) + sigma E_t(pi_{t+1}) + r^n_t = x_t + sigma i_t
+beta E_t(pi_{t+1}) = pi_t - kappa x_t
+i_t = max(0,psi_i i_{t-1} + (1-psi_i)(r_star + psi_pi pi_{t-1} + psi_x x_{t-1}))
 
-- The jump variables are x_t, pi_t and i_t  
+- The jump variables are x_t, pi_t and i_t
 - The pre-determined variables are x_{t-1}, pi_{t-1} and i_{t-1}
 - The constants are r_star
 - The shocks are r^n_t
@@ -52,48 +53,49 @@ Note we add another jump variable i_imp_t (the implied Taylor rule, for expositi
 
 ## REPLICATION
 
-| Description  | File             |
-| --           | --               | 
-| FIGURE  1    | fig1/do_fig1.m   |  
-| FIGURE  2    | do_fig2.m        |
-| FIGURE  3    | do_fig3.m        |
-| FIGURE  4    | do_fig4.m        |
-| FIGURE  5    | do_fig5.m        |
-| FIGURE  7    | fig7/do_fig7.m   | 
-| FIGURE  8    | fig7/do_fig7.m   |
-| FIGURE  9    | fig9/do_fig9.m   |  
-| FIGURE 10    | fig10/do_fig10.m |
-|              |                  |
-| TABLE   2    | do_fig5.m        |
-| TABLE   3    | fig7/do_fig7.m   |
+| Description  | File                 |
+| --           | --                   |
+| FIGURE  1    | fig1/do_fig1.m       |
+| FIGURE  2    | do_fig2.m            |
+| FIGURE  3    | do_fig3.m            |
+| FIGURE  4    | do_fig4.m            |
+| FIGURE  5    | do_fig5.m            |
+| FIGURE  6    | fig6/do_fig6.m       |
+| FIGURE  7    | fig7/do_fig7.m       |
+| FIGURE  8    | do_fig8.m            |
+| FIGURE  9    | fig9_10/do_fig9_10.m |
+| FIGURE 10    | fig9_10/do_fig9_10.m |
+|              |                      |
+| TABLE   2    | do_fig5.m            |
+| TABLE   3    | fig7/do_fig9_10.m    |
 
 ### APPENDIX
 
 | Description | File                     |
 | --          | --                       |
-| FIGURE A.1  | fig9/do_fig5.m           |
-| FIGURE A.2  | fig9/do_fig5.m           |
-| FIGURE A.3  | fig9/do_fig9.m           |
-| FIGURE A.4  | Appendix/A62/do_figA4.m  |
-| FIGURE A.5  | Appendix/A62/do_figA4.m  |
-| FIGURE A.6  | Appendix/A62/do_figA4.m  |
-| FIGURE A.7  | Appendix/A62/do_figA4.m  |
-| FIGURE A.8  | Appendix/A62/do_figA8.m  |
-| FIGURE A.9  | Appendix/A62/do_figA8.m  |
-| FIGURE A.10 | Appendix/A62/do_figA8.m  |
-| FIGURE A.11 | Appendix/A62/do_figA8.m  |
-| FIGURE A.12 | Appendix/A64/do_figA12.m |
-| FIGURE A.13 | Appendix/A64/do_figA12.m |
-| FIGURE A.14 | Appendix/A64/do_figA12.m |
-| FIGURE A.15 | Appendix/A64/do_figA12.m |
-| FIGURE A.16 | fig9/do_fig9.m           | 
-| FIGURE A.17 | fig7/do_fig7.m           |
-| FIGURE A.18 | fig7/do_fig7.m           |
-| FIGURE A.19 | fig7/do_fig7.m           |
-| FIGURE A.20 | fig7/do_fig7.m           |
-| FIGURE A.21 | fig7/do_fig7.m           |
+| FIGURE A.1  | do_fig5.m                |
+| FIGURE A.2  | do_fig5.m                |
+| FIGURE A.3  | do_fig5.m                |
+| FIGURE A.4  | Appendix/A72/do_figA4.m  |
+| FIGURE A.5  | Appendix/A72/do_figA4.m  |
+| FIGURE A.6  | Appendix/A72/do_figA4.m  |
+| FIGURE A.7  | Appendix/A72/do_figA4.m  |
+| FIGURE A.8  | Appendix/A73/do_figA8.m  |
+| FIGURE A.9  | Appendix/A73/do_figA8.m  |
+| FIGURE A.10 | Appendix/A73/do_figA8.m  |
+| FIGURE A.11 | Appendix/A73/do_figA8.m  |
+| FIGURE A.12 | Appendix/A74/do_figA12.m |
+| FIGURE A.13 | Appendix/A74/do_figA12.m |
+| FIGURE A.14 | Appendix/A74/do_figA12.m |
+| FIGURE A.15 | Appendix/A74/do_figA12.m |
+| FIGURE A.16 | Appendix/A74/do_figA12.m |
+| FIGURE A.17 | fig9_10/do_fig9_10.m     |
+| FIGURE A.18 | fig9_10/do_fig9_10.m     |
+| FIGURE A.19 | fig9_10/do_fig9_10.m     |
+| FIGURE A.20 | fig9_10/do_fig9_10.m     |
 |             |                          |
-| TABLE A.3   | Appendix/A62/do_figA4.m  |
-| TABLE A.4   | Appendix/A62/do_figA8.m  |
-| TABLE A.5   | Appendix/A64/do_figA12.m |
-| TABLE A.6   | Appendix/A65/do_tabA6.m  |
+| TABLE A.3   | Appendix/A61/do_tabA3.m  |
+| TABLE A.4   | Appendix/A62/do_tabA4.m  |
+| TABLE A.5   | Appendix/A72/do_figA4.m  |
+| TABLE A.6   | Appendix/A73/do_figA8.m  |
+| TABLE A.8   | Appendix/A75/do_tabA8.m  |

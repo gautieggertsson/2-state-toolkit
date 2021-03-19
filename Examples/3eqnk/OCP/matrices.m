@@ -38,4 +38,3 @@ BBB(eq.real,vars.i)      = 1;
 
 % Nominal interest rate
 AAA(eq.i,vars.phi1)      = 1; 
-

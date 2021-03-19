@@ -1,7 +1,7 @@
-%% EXAMPLE 3 - Exclude Regime-0, Specify Exogenous T-tilde
+%% EXAMPLE 3 - Exclude Regime-0, Specify exogenous k
 % The example is based on a simple 3-equation New-Keynesian Model featuring
 % a Truncated Taylor rule with backward looking component.
-% See readme.md for additional details.
+% See readme.md and appendix for additional details.
 % (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clear;
@@ -22,18 +22,19 @@ config.mono         = 1;   % switch for monotone k-vector
 config.trh          = -exp(-14); % declare a numerical threshold for which the constraint is thought as binding. i.e. if i < bound +trh, then lower bound counts as being violated
 
 %   0.2) SPECIFY MODEL AND CALIBRATION
-variables      % vector of variables [Z_t P_(t-1)]'
-equations      % name equations
-parameters_ex3 % model parameters
-matrices       % model matrices (A, B)
+variables  % vector of variables [Z_t P_(t-1)]'
+equations  % name equations
+parameters % model parameters
+matrices   % model matrices (A, B)
 
 
-%%  1) RUN WITH NO R0 SEARCH AND NO T_TILDE (DEFAULT T_TILDE =1) 
-%   the implied interest rate, by the Taylor rule is positive, but the
-%   model imposes the ELB
-[D_3,G_3,D_3a]                      = regime3(AAA,BBB,param);
-[D_2,G_2]                           = regime2(AAA,BBB,D_3a,param,config); 
-[D_1,G_1, ResM, max_k,k,T_tilde]    = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'verbose',1,'R0_search',0);
+%%  1) RUN WITH NO R0 SEARCH AND EXOGENOUS K-VECTOR 
+%   the implied interest rate by the Taylor rule could be positive at the
+%   beginning, but the model sets it to 0
+param.k = 5*ones(1,config.taumax);
+[D_3,G_3,D_3a]                   = regime3(AAA,BBB,param);
+[D_2,G_2]                        = regime2(AAA,BBB,D_3a,param,config); 
+[D_1,G_1, ResM, max_k,k,T_tilde] = regime1(AAA,BBB,D_3a,D_3,D_2,G_3,G_2,param,config,'verbose',1,'R0_search',0,'k_input',param.k);
 
 % Rescale into annualized values
 ResM(:,vars.x,:)     = ResM(:,vars.x,:)*100;

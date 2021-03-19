@@ -1,8 +1,8 @@
 % Parameters
 % Calibration: Eggertsson and Woodford (2003)
 
-% Number of predetermined variables
-param.NS      = 3;
+% Number of state variables
+param.NS      = 5;
 
 % Structural parameters
 param.theta   = 7.87;
@@ -15,11 +15,13 @@ param.phi_x   = 0.5;
 param.phi_i   = 0.8;  
 
 % Shocks
-param.rl      = -0.005;
-param.rh      = 1/param.beta-1;
+param.low     = -0.005;
+param.high    = 1/param.beta-1;
+param.const   = param.high;
 
-param.rl = [param.rh;param.rl];  
-param.rh = [param.rh;param.rh];
+param.sl = [param.const;param.low];  
+param.sh = [param.const;param.high];
 
 % Initial conditions
-param.init_cond = [0;0;param.rh(1);param.rh(1);0;0;param.rh(1);1;1];
+param.init_cond = zeros(length(fieldnames(vars)),1);
+param.init_cond(vars.i_lag) = param.const;

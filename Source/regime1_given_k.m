@@ -13,7 +13,7 @@
 % The latter function also tells whether the model as it is violates the
 % constraint to a variable X
 
-%% INPUTS
+%% INPUT
 % This function takes as inputs:
 % - model matrices A and B under regime 1
 % - transition matrices D_3a, D_3 and G_3 from REGIME3
@@ -24,7 +24,7 @@
 % - the value of the variable that is constrained when it is constrained
 % (e.g. 0 for the ZLB)
 
-%% OUTPUTS
+%% OUTPUT
 % It will deliver:
 % - a series of two transition matrices (D and G) valid in regime 1, a
 % matrix with the evolution of all the variables, a threshold tau for which
@@ -43,4 +43,3 @@ function [D_1,G_1,ResM,wrong_tau,status] = regime1_given_k(A,B,A_r0,A0,B_r0,B0,D
 %% loop for filling the results in the history starts
 
 [ResM,status,wrong_tau] = regime1_fill_results(D_0,G_0,D_1,D_2,D_3,G_1,G_2,G_3,k,T_tilde,rl,rh,config,init_cond);
-

@@ -18,14 +18,14 @@
 % and G_2 where the third dimension corresponds to 'distance in time from
 % regime 3'.
 
-%% INPUTS
+%% INPUT
 % The inputs of this particular code you must are:
 % - model matrices
 % - HIGH state Markov parameters (rh)
 % - transition matrix D_3a (no need for G_3) from REGIME3
 % - the maximum length of REGIME2
 
-%% OUTPUTS
+%% OUTPUT
 % This function delivers a series of two transition matrices (D and G)
 % corresponding to the distance from the start of regime 3
 
@@ -34,16 +34,16 @@ function [D_2, G_2] = regime2(AAA,BBB,D_3a,param,config)
 A           = AAA;              % this matrix will be fed to the rref function after some minor modification
 B           = BBB;              % same for this other matrix
 NY          = size(AAA,1);      % count the number of variables
-nshocks     = size(param.rh,1); % count the number of shocks
+nshocks     = size(param.sh,1); % count the number of shocks
 NK          = size(D_3a,2);     % count the state variables + shocks + i
 
 %% substitute the value of the Markov vector in HIGH state in the matrices A and B
 %   IMPORTANT it is substituting for the shocks value in all equations but
 %   the shock equations
-A(1:end-nshocks-1,end-nshocks+1:end)  = AAA(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.rh',NY-nshocks-1,1);
-B(1:end-nshocks-1,end-nshocks+1:end)  = BBB(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.rh',NY-nshocks-1,1);
-A(end,end-nshocks+1:end)  = AAA(end,end-nshocks+1:end).*param.rh';
-B(end,end-nshocks+1:end)  = BBB(end,end-nshocks+1:end).*param.rh';
+A(1:end-nshocks-1,end-nshocks+1:end)  = AAA(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.sh',NY-nshocks-1,1);
+B(1:end-nshocks-1,end-nshocks+1:end)  = BBB(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.sh',NY-nshocks-1,1);
+A(end,end-nshocks+1:end)  = AAA(end,end-nshocks+1:end).*param.sh';
+B(end,end-nshocks+1:end)  = BBB(end,end-nshocks+1:end).*param.sh';
 
 %% substitute the policy rule and the interest rate coefficients to zero
 %     A(:,NY-NK+1)    = zeros(NY,1);   % those are the coefficients of the matrices A and B

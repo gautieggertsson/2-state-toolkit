@@ -6,7 +6,7 @@ BBB = zeros(param.NY,param.NY);
 % Output equation
 AAA(eq.is,vars.x)          = 1;
 AAA(eq.is,vars.pi)         = param.sigma;
-AAA(eq.is,vars.r)          = param.sigma;
+BBB(eq.is,vars.r)          = -param.sigma;
 BBB(eq.is,vars.x)          = 1;
 BBB(eq.is,vars.i)          = param.sigma;
 

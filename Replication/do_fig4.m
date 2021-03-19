@@ -1,8 +1,5 @@
 %% FIGURE 4. COMPARE RULES IN THE 3 EQUATION NEW-KEYNESIAN MODEL UNDER A COST PUSH SHOCK
-% Parametrization is the standard Eggertsson and Woodford (2003). Shocks
-% are set to generate a drop in output on impact of -7.5%, and a drop in
-% inflation of -0.5%, 0% or -2%, depending on the folder run.
-% Utility calculations are based on equal weighting on an annualised base.
+% Parametrization taken from Eggertsson and Woodford (2003).
 % (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clear;
@@ -16,7 +13,7 @@ cfg.path = 'Examples/cost_push';
 
 
 %% SET PARAMETERS     
-cfg.models  = {'OCP','TTR0','CumNGDPT','SDTR'};
+cfg.models  = {'OCP','TTR0','HDNGDPT','SDTR'};
 cfg.V       = {'x','pi','i','ngdp'}; % variables to plot
 cfg.taumax  = 400;          % max no. of contingencies
 cfg.l2      = 50;           % max length of regime 2
@@ -52,16 +49,6 @@ for m = 1:cfg.n_mod
 end
 
 
-%% PRINT SUMMARY TABLE
-T = [R.wl R.e_zlb R.v R.i];
-T = T./T(1,:);
-T(1,:) = [R.wl(1) R.e_zlb(1) R.v(1,:) R.i(1,:)];
-cfg.mod_lab  = {'OCP','TTR','HD-NGDPT','SDTR'};
-T = array2table(T,...
-    'VariableNames',{'Welfare Loss','E[ZLB]','Vol x','Vol \pi','Vol i','Impact x','Impact \pi'},...
-    'RowNames',cfg.mod_lab)
-
-
 %% RESCALE IMPULSE RESPONSES INTO ANNUAL RATES, PERCENTAGE POINTS
 N = {'c','irf'};
 for i = 1:2
@@ -74,11 +61,9 @@ clearvars i
 
 
 %% SETTINGS FOR FIGURES
-
 set(0,'DefaultFigureVisible','on') 
-
-var_lab = {'\hat{Y}','\pi','i','\hat{N}'};
-
+var_lab   = {'\hat{Y}','\pi','i','\hat{N}'};
+mod_lab   = {'OCP','TTR','HD-NGDPT','SDTR'};
 mod_base  = [1 2 3 4];
 col_base  = [1 2 5 7];
 line_base = {'-' '--' ':' '-'};
@@ -91,7 +76,5 @@ R.c(1,nc,:) = 0;
 
 
 %% PLOT THE 'cont' CONTINGENCY IN EACH MODEL
-
-%-- Group Baseline Rules
-graph_models(R.c,cfg.horizon,var_lab,cfg.mod_lab,col_base,line_base);
-clearvars -except R cfg T
+graph_models(R.c,cfg.horizon,var_lab,mod_lab,col_base,line_base);
+clearvars -except R cfg

@@ -34,7 +34,7 @@
 % up w/prob=1-mu in regime 3 for or remain in regime 1 (using the
 % transition matrix of the period after, namely taumax-i+1.
 
-%% INPUTS
+%% INPUT
 % This function takes as inputs:
 % - model matrices A and B
 % - auxiliary matrices
@@ -42,7 +42,7 @@
 % - transition matrix D_3a
 % - k vector
 
-%% OUTPUTS
+%% OUTPUT
 % It will deliver:
 % - a series of transition matrices D_1 and G_1
 

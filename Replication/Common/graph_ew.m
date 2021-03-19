@@ -1,26 +1,5 @@
 function graph_ew(IR,var,horizon,col_irf,IRF_labels, cont_data, cont_vars)
 
-%% INSTRUCTIONS
-% function requires three arguments: IRF data, var struct (that contains var
-% names and, hence, locations) and horizon (e.g. how many periods to plot).
-% With these 3 function will plot all variables with correct labels at prespecified
-% horizon. Additionally, you can pass:
-% (1) particular variables that you want to plot
-% (2) bundle "contingencies data + what contingencies I need" to plot
-% them too.
-
-% Function assumes, that data is passed IN COLUMNS (e.g. each column is a
-% variable). This is a natural way to handle data, though in some programs
-% in toolbox data is horizontal. Data should NOT be horizontal (e.g.
-% transpose IR variable in original program).
-
-% Examples of usage:
-
-% (1) graphing(IR,var,30)
-% (2) graphing(IR,var,30,["pi","y","i","r"])
-% (3) graphing(IR,var,30,ResM,[1:5:30])
-% (4) graphing(IR,var,30,["pi","y","i","r"],ResM,[1:5:30])
-
 %% GET THE NUMBERS OF VARIABLES
 if exist('IRF_labels','var') == 1 & isa(IRF_labels, 'string') == 0 %this condition catches situation when you do
     % want to pass contingencies to function but do not pass the list of
@@ -42,13 +21,12 @@ else
     end
 end
 
-
-
 %% GET THE NUMBER OF FIGURES
 total_figs = floor(total_vars/4);
 if mod(total_vars,4) ~= 0
     total_figs = total_figs + 1;
 end
+
 %% PLOTTING
 
 for i=1:total_figs

@@ -14,7 +14,7 @@ switch mod
         %% VOLATILITY
         v(1)  = vol_loss(ResM,vars.x,0,param.beta,param.mu);
         v(2)  = vol_loss(ResM,vars.pi,0,param.beta,param.mu);
-        v(3)  = vol_loss(ResM,vars.i,param.rh(1),param.beta,param.mu);
+        v(3)  = vol_loss(ResM,vars.i,param.sh(1),param.beta,param.mu);
         
         %% INITIAL IMPACT
         imp(1) = 100*ResM(1,vars.x,2);

@@ -1,5 +1,5 @@
 %% FIGURE 2. COMPARE RULES IN THE 3-EQUATION NEW-KEYNESIAN MODEL
-% Parametrization is the standard Eggertsson and Woodford (2003). 
+% Parametrization taken from Eggertsson and Woodford (2003).
 % (C) Eggertsson G., Egiev S., Lin A., Platzer J. and Riva L.
 
 clear;
@@ -24,8 +24,8 @@ set(0,'DefaultFigureVisible','off'); % suppress figures
 
 
 %% INIT CONTAINERS 
-cfg.n_mod   = length(cfg.models); % number of models
-cfg.n_var   = length(cfg.V);      % number of vars to plot
+cfg.n_mod = length(cfg.models); % number of models
+cfg.n_var = length(cfg.V);      % number of vars to plot
 
 R.wl    = zeros(cfg.n_mod,1);
 R.e_zlb = zeros(cfg.n_mod,1);
@@ -49,16 +49,6 @@ for m = 1:cfg.n_mod
 end
 
 
-%% PRINT SUMMARY TABLE
-T = [R.wl R.e_zlb R.v R.i];
-T = T./T(1,:);
-T(1,:) = [R.wl(1) R.e_zlb(1) R.v(1,:) R.i(1,:)];
-cfg.mod_lab = {'OCP','TTR','PLT','NGDPT'};
-T = array2table(T,...
-    'VariableNames',{'Welfare Loss','E[ZLB]','Vol x','Vol \pi','Vol i','Impact x','Impact \pi'},...
-    'RowNames',cfg.mod_lab)
-
-
 %% RESCALE IMPULSE RESPONSES INTO ANNUAL RATES, PERCENTAGE POINTS
 N = {'c','irf'};
 for i = 1:2
@@ -72,20 +62,19 @@ clearvars i
 
 %% SETTINGS FOR FIGURES
 set(0,'DefaultFigureVisible','on') 
-var_lab = {'\hat{Y}','\pi','i','\hat{N}'};
+var_lab   = {'\hat{Y}','\pi','i','\hat{N}'};
+mod_lab   = {'OCP','TTR','PLT','NGDPT'};
 mod_base  = [1 2 3 4];
 col_base  = [1 2 3 4];
 line_base = {'-' '--' '-' '-.'};
 
 
-%% ADD STEADY STATE VALUE AS INITIAL ONE (FOR SOME VARIABLES)
+%% ADD STEADY STATE VALUE AS INITIAL CONDITION (FOR SOME VARIABLES)
 nc = find(strcmp(cfg.V,'ngdp')); 
 R.c = cat(1,R.c(end,:,:),R.c);
 R.c(1,nc,:) = 0;
 
 
 %% PLOT THE 'cont' CONTINGENCY IN EACH MODEL
-
-%-- Group Baseline Rules
-graph_models(R.c,cfg.horizon,var_lab,cfg.mod_lab,col_base,line_base);
-clearvars -except R cfg T
+graph_models(R.c,cfg.horizon,var_lab,mod_lab,col_base,line_base);
+clearvars -except R cfg

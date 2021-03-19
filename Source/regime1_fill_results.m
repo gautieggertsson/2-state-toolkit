@@ -8,7 +8,7 @@
 % to such transition matrices and checks that in the first period of
 % regime 3 the constraint of the variable X is NOT violated
 
-%% INPUTS
+%% INPUT
 % This function takes as inputs:
 % - transition matrix D_1
 % - transition matrix D_2
@@ -22,7 +22,7 @@
 % - the value of the variable that is constrained when it is constrained
 % (e.g. 0 for the ZLB)
 
-%% OUTPUTS
+%% OUTPUT
 % It will deliver:
 % - one matrix in 3 dimensions, tracing the evolutions of the variables
 % across different contingencies
@@ -60,7 +60,7 @@ T0 = cat(2,zeros(NY+1,NY-NK+1,size(T0,3)),T0); % add zeros for the jump variable
 %% construct history
 status_bad = 0;    % preallocate a status variable
 wrong_tau = -1;     % preallocate the wrong tau
-for tau=2:taumax-1
+for tau=2:taumax
 
     if tau == 2
         newy =init_cond;          % preallocate vector xi
@@ -142,7 +142,7 @@ end
 
 % fill remaining t
 if status_bad == 0
-    for tau=2:taumax-1 
+    for tau=2:taumax
         if tau > 2
             %fill up missing values in regime 1
             ResM(1:tau-2,:,tau) = ResM(1:tau-2,:,tau-1);        %take history for regime one from previous tau

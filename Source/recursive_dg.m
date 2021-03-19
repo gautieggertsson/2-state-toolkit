@@ -53,12 +53,12 @@
 %   D = ((eye-C2*D_prime)^(-1))*C1
 %   G = (C3+C4*D_prime*((eye-C2*D_prime)^(-1))*C1)
 
-%% INPUTS
+%% INPUT
 % This function takes as inputs:
 % - four matrix blocks from the reduced row echelon form
 % - one transition matrix (the one of the jump variables) from period after
 
-%% OUTPUTS
+%% OUTPUT
 % This function delivers:
 % - a new transition matrix D
 % - a new transition matrix G

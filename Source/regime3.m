@@ -14,13 +14,13 @@
 % the transition matrices in order to allow for the variable X to enter the
 % equations as a state variable.
 
-%% INPUTS
+%% INPUT
 % The inputs of this particular code you must are:
 % - model matrices
 % - HIGH state Markov parameters (rh)
 % - number of state variables
 
-%% OUTPUTS
+%% OUTPUT
 % This function delivers two transition matrices (D_3 and G_3) that
 % will hold in regime 3
 
@@ -30,8 +30,8 @@ A   = AAA;                % this matrix will be fed to reds and solds
 % after some minor modification
 B   = BBB;                % the same for this other matrix
 NY  = size(AAA,1);        % this counts the number of variables
-nshocks=size(param.rh,1); % counts the number of shocks
-NK  = param.NS+nshocks;   % in regime 3 the shocks are treated as states
+nshocks=size(param.sh,1); % counts the number of shocks
+NK  = param.NS;           % in regime 3 the shocks are treated as states
 NX  = 1;                  % this is to preallocate the number of shocks
 % (it will be useless) for reds and solds
 C   = zeros(NY, NX);      % same for the matrix that multiply the shocks
@@ -39,10 +39,10 @@ C   = zeros(NY, NX);      % same for the matrix that multiply the shocks
 %% substitute the value of the Markov vector in HIGH state in the matrices A and B
 %   IMPORTANT it is substituting for the shocks value in all equations but
 %   the shock equations
-A(1:end-nshocks-1,end-nshocks+1:end)  = AAA(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.rh',NY-nshocks-1,1);
-B(1:end-nshocks-1,end-nshocks+1:end)  = BBB(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.rh',NY-nshocks-1,1);
-A(end,end-nshocks+1:end)  = AAA(end,end-nshocks+1:end).*param.rh';
-B(end,end-nshocks+1:end)  = BBB(end,end-nshocks+1:end).*param.rh';
+A(1:end-nshocks-1,end-nshocks+1:end)  = AAA(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.sh',NY-nshocks-1,1);
+B(1:end-nshocks-1,end-nshocks+1:end)  = BBB(1:end-nshocks-1,end-nshocks+1:end).*repmat(param.sh',NY-nshocks-1,1);
+A(end,end-nshocks+1:end)  = AAA(end,end-nshocks+1:end).*param.sh';
+B(end,end-nshocks+1:end)  = BBB(end,end-nshocks+1:end).*param.sh';
 
 %% run reds and solds
 reds
