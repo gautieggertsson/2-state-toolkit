@@ -48,7 +48,7 @@ for m = 1:length(cfg.models)
     [R.wl(m), R.e_zlb(m), R.c(:,:,m), R.v(m,:), R.i(m,:), R.irf(:,:,m)] = ...
         out(ResM,IR,k,T_tilde,vars,param,cfg.V,cfg.cont,'nyfed');
     fprintf(strcat(string(cfg.models(m)),' done\n')); pause(0.1);
-    clearvars -except R cfg m
+    clearvars -except R cfg
 end
 
 

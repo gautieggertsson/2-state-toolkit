@@ -53,49 +53,52 @@ Note we add another jump variable i_imp_t (the implied Taylor rule, for expositi
 
 ## REPLICATION
 
-| Description  | File                 |
-| --           | --                   |
-| FIGURE  1    | fig1/do_fig1.m       |
-| FIGURE  2    | do_fig2.m            |
-| FIGURE  3    | do_fig3.m            |
-| FIGURE  4    | do_fig4.m            |
-| FIGURE  5    | do_fig5.m            |
-| FIGURE  6    | fig6/do_fig6.m       |
-| FIGURE  7    | fig7/do_fig7.m       |
-| FIGURE  8    | do_fig8.m            |
-| FIGURE  9    | fig9_10/do_fig9_10.m |
-| FIGURE 10    | fig9_10/do_fig9_10.m |
-|              |                      |
-| TABLE   2    | do_fig5.m            |
-| TABLE   3    | fig7/do_fig9_10.m    |
+| Description  | File                 | Runtime (sec) |
+| --           | --                   | --            |
+| FIGURE  1    | fig1/do_fig1.m       | 3             |
+| FIGURE  2    | do_fig2.m            | 7             |
+| FIGURE  3    | do_fig3.m            | 8             |
+| FIGURE  4    | do_fig4.m            | 9             |
+| FIGURE  5    | do_fig5.m            | 440           |
+| FIGURE  6    | fig6/do_fig6.m       | 21            |
+| FIGURE  7    | fig7/do_fig7.m       | 5             |
+| FIGURE  8    | do_fig8.m            | 1             |
+| FIGURE  9    | fig9_10/do_fig9_10.m | 780           |
+| FIGURE 10    | fig9_10/do_fig9_10.m | 780           |
+|              |                      |               |
+| TABLE   2    | do_fig5.m            | 780           |
+| TABLE   3    | fig7/do_fig9_10.m    | 780           |
 
 ### APPENDIX
 
-| Description | File                     |
-| --          | --                       |
-| FIGURE A.1  | do_fig5.m                |
-| FIGURE A.2  | do_fig5.m                |
-| FIGURE A.3  | do_fig5.m                |
-| FIGURE A.4  | Appendix/A72/do_figA4.m  |
-| FIGURE A.5  | Appendix/A72/do_figA4.m  |
-| FIGURE A.6  | Appendix/A72/do_figA4.m  |
-| FIGURE A.7  | Appendix/A72/do_figA4.m  |
-| FIGURE A.8  | Appendix/A73/do_figA8.m  |
-| FIGURE A.9  | Appendix/A73/do_figA8.m  |
-| FIGURE A.10 | Appendix/A73/do_figA8.m  |
-| FIGURE A.11 | Appendix/A73/do_figA8.m  |
-| FIGURE A.12 | Appendix/A74/do_figA12.m |
-| FIGURE A.13 | Appendix/A74/do_figA12.m |
-| FIGURE A.14 | Appendix/A74/do_figA12.m |
-| FIGURE A.15 | Appendix/A74/do_figA12.m |
-| FIGURE A.16 | Appendix/A74/do_figA12.m |
-| FIGURE A.17 | fig9_10/do_fig9_10.m     |
-| FIGURE A.18 | fig9_10/do_fig9_10.m     |
-| FIGURE A.19 | fig9_10/do_fig9_10.m     |
-| FIGURE A.20 | fig9_10/do_fig9_10.m     |
-|             |                          |
-| TABLE A.3   | Appendix/A61/do_tabA3.m  |
-| TABLE A.4   | Appendix/A62/do_tabA4.m  |
-| TABLE A.5   | Appendix/A72/do_figA4.m  |
-| TABLE A.6   | Appendix/A73/do_figA8.m  |
-| TABLE A.8   | Appendix/A75/do_tabA8.m  |
+| Description | File                     | Runtime (sec) |
+| --          | --                       | --            |
+| FIGURE A.1  | do_fig5.m                | 440           | 
+| FIGURE A.2  | do_fig5.m                | 440           |
+| FIGURE A.3  | do_fig5.m                | 440           |
+| FIGURE A.4  | Appendix/A72/do_figA4.m  | 415           |
+| FIGURE A.5  | Appendix/A72/do_figA4.m  | 415           |
+| FIGURE A.6  | Appendix/A72/do_figA4.m  | 415           |
+| FIGURE A.7  | Appendix/A72/do_figA4.m  | 415           |
+| FIGURE A.8  | Appendix/A73/do_figA8.m  | 415           |
+| FIGURE A.9  | Appendix/A73/do_figA8.m  | 415           |
+| FIGURE A.10 | Appendix/A73/do_figA8.m  | 415           |
+| FIGURE A.11 | Appendix/A73/do_figA8.m  | 415           |
+| FIGURE A.12 | Appendix/A74/do_figA12.m | 220           |
+| FIGURE A.13 | Appendix/A74/do_figA12.m | 220           |
+| FIGURE A.14 | Appendix/A74/do_figA12.m | 220           |
+| FIGURE A.15 | Appendix/A74/do_figA12.m | 220           |
+| FIGURE A.16 | Appendix/A74/do_figA12.m | 220           |
+| FIGURE A.17 | fig9_10/do_fig9_10.m     | 780           |
+| FIGURE A.18 | fig9_10/do_fig9_10.m     | 780           |
+| FIGURE A.19 | fig9_10/do_fig9_10.m     | 780           |
+| FIGURE A.20 | fig9_10/do_fig9_10.m     | 780           |
+|             |                          |               |
+| TABLE A.3   | Appendix/A61/do_tabA3.m  | 18            |
+| TABLE A.4   | Appendix/A62/do_tabA4.m  | 32            |
+| TABLE A.5   | Appendix/A72/do_figA4.m  | 415           |
+| TABLE A.6   | Appendix/A73/do_figA8.m  | 415           |
+| TABLE A.8   | Appendix/A75/do_tabA8.m  | 26            |
+
+Runtimes are measured on MATLAB R2020b (Windows 10 19042.867). 
+CPU: Intel Core i7-6950X; RAM: 64GB. 
