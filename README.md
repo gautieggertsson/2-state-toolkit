@@ -14,6 +14,8 @@ Many of these files are used to generate the results reported in the Eggertsson 
 
 ## SIMPLE EXAMPLES
 
+A complete guide to the following simple examples is included in Appendix B.
+
 | Description                                    | File            |
 | --                                             | --              |
 | SIMPLE POLICY RULE WITH STATE VARIABLE         | Examples/ex_1.m |
