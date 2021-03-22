@@ -23,6 +23,7 @@ A complete guide to the following simple examples is included in Appendix B.
 | EXCLUDE BOTH REGIME 0 AND EXOGENOUS T-TILDE    | Examples/ex_3.m |
 | EXCLUDE REGIME 0 AND IMPOSE EXOGENOUS K        | Examples/ex_4.m |
 
+### OPTIONAL PARAMETERS
 *T-tilde:*
 - T-tilde is 1 by default.
 - The user can input an arbitrary value, if the "true" value is lower than the input AND regime 0 search is off, then there will likely be NEGATIVE RATES, before T-tilde. This last result will also be true if the "true" value is lower than the input AND regime 0 search is on. If the "true" value is higher than the input AND regime 0 search is off, then there will be POSITIVE implied rates, for periods where the model does impose them (regime 1).
