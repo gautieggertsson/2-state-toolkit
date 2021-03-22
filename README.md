@@ -9,7 +9,7 @@ This repository contains the MATLAB code base for the toolkit presented in Egger
 
 
 The Examples folder contains stand-alone files from which the user can learn how to use the toolkit and its features.
-Many of these files are used to generate the results reported in the Eggertsson et al. (2021), so they often do not clear the workspace before execution. Please make sure your workspace is empty before executing them. 
+Many of these files are used to generate the results reported in the Eggertsson et al. (2021), so they often do not clear the workspace before execution. Please make sure your workspace is empty before running them. 
 
 
 ## SIMPLE EXAMPLES
