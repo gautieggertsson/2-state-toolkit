@@ -9,7 +9,7 @@ This repository contains the MATLAB code base for the toolkit presented in Egger
 
 
 The Examples folder contains stand-alone files from which the user can learn how to use the toolkit and its features.
-Many of these files are used to generate the results reported in the Eggertsson et al. (2021), so they often do not clear the workspace before execution. Please make sure your workspace is empty before running them. 
+Many of these files are used to generate the results reported in the Eggertsson et al. (2021), so they often do not clear the workspace before execution. Please make sure your workspace is empty before running them.
 
 
 ## SIMPLE EXAMPLES
@@ -76,32 +76,32 @@ Note we add another jump variable i_imp_t (the implied Taylor rule, for expositi
 
 | Description | File                     | Runtime (sec) |
 | --          | --                       | --            |
-| FIGURE A.1  | do_fig5.m                | 440           | 
+| FIGURE A.1  | do_fig5.m                | 440           |
 | FIGURE A.2  | do_fig5.m                | 440           |
 | FIGURE A.3  | do_fig5.m                | 440           |
-| FIGURE A.4  | Appendix/A72/do_figA4.m  | 415           |
-| FIGURE A.5  | Appendix/A72/do_figA4.m  | 415           |
-| FIGURE A.6  | Appendix/A72/do_figA4.m  | 415           |
-| FIGURE A.7  | Appendix/A72/do_figA4.m  | 415           |
-| FIGURE A.8  | Appendix/A73/do_figA8.m  | 415           |
-| FIGURE A.9  | Appendix/A73/do_figA8.m  | 415           |
-| FIGURE A.10 | Appendix/A73/do_figA8.m  | 415           |
-| FIGURE A.11 | Appendix/A73/do_figA8.m  | 415           |
-| FIGURE A.12 | Appendix/A74/do_figA12.m | 220           |
-| FIGURE A.13 | Appendix/A74/do_figA12.m | 220           |
-| FIGURE A.14 | Appendix/A74/do_figA12.m | 220           |
-| FIGURE A.15 | Appendix/A74/do_figA12.m | 220           |
-| FIGURE A.16 | Appendix/A74/do_figA12.m | 220           |
+| FIGURE A.4  | Appendix/A62/do_figA4.m  | 415           |
+| FIGURE A.5  | Appendix/A62/do_figA4.m  | 415           |
+| FIGURE A.6  | Appendix/A62/do_figA4.m  | 415           |
+| FIGURE A.7  | Appendix/A62/do_figA4.m  | 415           |
+| FIGURE A.8  | Appendix/A63/do_figA8.m  | 415           |
+| FIGURE A.9  | Appendix/A63/do_figA8.m  | 415           |
+| FIGURE A.10 | Appendix/A63/do_figA8.m  | 415           |
+| FIGURE A.11 | Appendix/A63/do_figA8.m  | 415           |
+| FIGURE A.12 | Appendix/A64/do_figA12.m | 220           |
+| FIGURE A.13 | Appendix/A64/do_figA12.m | 220           |
+| FIGURE A.14 | Appendix/A64/do_figA12.m | 220           |
+| FIGURE A.15 | Appendix/A64/do_figA12.m | 220           |
+| FIGURE A.16 | Appendix/A64/do_figA12.m | 220           |
 | FIGURE A.17 | fig9_10/do_fig9_10.m     | 780           |
 | FIGURE A.18 | fig9_10/do_fig9_10.m     | 780           |
 | FIGURE A.19 | fig9_10/do_fig9_10.m     | 780           |
 | FIGURE A.20 | fig9_10/do_fig9_10.m     | 780           |
 |             |                          |               |
-| TABLE A.3   | Appendix/A61/do_tabA3.m  | 18            |
-| TABLE A.4   | Appendix/A62/do_tabA4.m  | 32            |
-| TABLE A.5   | Appendix/A72/do_figA4.m  | 415           |
-| TABLE A.6   | Appendix/A73/do_figA8.m  | 415           |
-| TABLE A.8   | Appendix/A75/do_tabA8.m  | 26            |
+| TABLE A.3   | Appendix/A51/do_tabA3.m  | 18            |
+| TABLE A.4   | Appendix/A52/do_tabA4.m  | 32            |
+| TABLE A.5   | Appendix/A62/do_figA4.m  | 415           |
+| TABLE A.6   | Appendix/A63/do_figA8.m  | 415           |
+| TABLE A.8   | Appendix/A65/do_tabA8.m  | 26            |
 
-Runtimes are measured on MATLAB R2020b (Windows 10 19042.867). 
-CPU: Intel Core i7-6950X; RAM: 64GB. 
+Runtimes are measured on MATLAB R2020b (Windows 10 19042.867).
+CPU: Intel Core i7-6950X; RAM: 64GB.

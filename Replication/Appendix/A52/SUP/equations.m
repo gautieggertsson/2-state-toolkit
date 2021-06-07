@@ -1,0 +1,29 @@
+% Equations
+eq.CEE      = 1;
+eq.MUC      = 2;
+eq.Kstock   = 3;
+eq.effK     = 4;
+eq.Kuse     = 5;
+eq.optI     = 6;
+eq.RrK      = 7;
+eq.ErK      = 8;
+eq.networth = 9;
+eq.aggWage  = 10;
+eq.optWage  = 11;
+eq.PhilC    = 12;
+eq.mc       = 13;
+eq.prod     = 14;
+eq.KLratio  = 15;
+eq.resconst = 16;
+eq.ex1      = 17;
+eq.ex2      = 18;
+eq.ex3      = 19;
+eq.ex4      = 20;
+eq.ex5      = 21;
+eq.ex12     = 22;
+eq.pi_lag   = 23;
+eq.pfs      = 24;
+eq.sigma    = 25;
+eq.cps      = 26;
+eq.rule     = 27;
+

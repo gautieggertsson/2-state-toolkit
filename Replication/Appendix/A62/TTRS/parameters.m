@@ -1,46 +1,24 @@
 % Parameters
-param.NS = 13;
+% Calibration: Eggertsson and Woodford (2003) with drop in output = 7.5% and no drop in inflation
 
-param.target_natreal = 0;
-param.gam_nyfed      = 1.687/400;
-param.a2u            = 0.294;
-param.h              = 0.704;
-helper_bet           = -param.target_natreal + 400*param.gam_nyfed;
-param.beta           = exp(helper_bet/400); 
-param.s2             = 3.121;
-param.gamma_e        = 0.99;
-param.gammstar       = param.gamma_e; 
-param.delta          = 0.025;
-param.zeta_sp_b      = 0.070;
-param.nu_l           = 1.273;
-param.lambda_w       = 0.3;
-param.alpha          = 0.350;
-param.gstar          = 0.195;
-param.psi_pi         = 2.016 ;
-param.psi_y          = 0.273 ;
-param.pistar         = exp(2.0/400);
-param.sigma_r        = 0.152;
-param.lambda_f       = 0.15;
-param.sprd           = (1+1.163/100)^(1/4); 
-param.Lstar          = 1; 
-param.Bigphi         = 0; 
-param.chi            = 0.1;
-param.nu_m           = 2;
-param.Fom            = 1-(1-0.15)^(1/4); 
-param.zeta_omega     = 0.904; 
-param.zeta_p         = 0.879;
-param.sho_r          = 0.762; 
-param.lagr_pi        = 1;  		
-param.lagr_x         = 1/16;
-param.mu             = 0.73626;
-param.mono           = 0; 
-param.sl             = -0.10512; 
-param.spsl           = 0;
-param.ul             = 0.001556;
+param.NS      = 6;   
 
-param.sl = [param.sl;param.spsl;param.ul];
-param.sh = zeros(3,1);
+param.theta   = 7.87;
+param.kappa   = 0.02;
+param.mu      = 0.9; 
+param.beta    = 0.99;
+param.sigma   = 0.5; 
+param.phi_pi  = 1.5; 
+param.phi_x   = 0.5; 
+param.phi_i   = 0.8; 
+param.lagr_x  = 1/16;
+param.lagr_pi = 1;   
+param.rl      = -0.0150;   
+param.rh      = 1/param.beta-1;  
+param.ul      = 0.0015; 
+param.uh      = 0;  
 
-% Additional transformations
-addpath('../Commons')
-NYFEDpara
+param.sl = [param.rh;param.rl;param.ul]; 
+param.sh = [param.rh;param.rh;param.uh]; 
+
+param.init_cond = [0;0;param.rh(1);0;0;param.rh(1);1;1;param.uh];
